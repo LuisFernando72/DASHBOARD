@@ -1,0 +1,2221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyecto Gym</title>
+    <link rel="stylesheet" href="css/style_table.css" />
+    <link rel="stylesheet" href="css/estiloDatos_generales.css" />
+    <link rel="stylesheet" href="css/estiloControlC.css" />
+    <link rel="stylesheet" href="css/estilo_modificar_cliente.css" />
+    <link rel="stylesheet" href="css/estilo_table99.css" />
+    <!-- sweet alert2 (ALERTAS) -->
+    <script src="library/sweetalert2.min.js"></script>
+    <!-- iconos page -->
+    <script src="library/fontawesome/js/all.min.js"></script>
+    <!-- jquery 3.6 -->
+    <script src="library/jQuery3.js"></script>
+    <!-- Extensiones paises (Teléfono) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  </head>
+  <body>
+    <!-- FORMULARIO DATOS GENERALES CLIENTE -->
+    <dialog id="modal_datos_generales">
+      <div class="container">
+        <div class="info-container" id="InfoCont">
+          <!-- <div class="container-form"> -->
+          <div id="btn_cancelarDatosG" class="btn_cancelar">
+            <i class="fa-solid fa-circle-xmark ex"> </i>
+          </div>
+
+          <header>Registro General</header>
+          <br />
+          <div class="progressbar">
+            <div class="progressbar__option">
+              <p>Información general</p>
+            </div>
+            <div class="progressbar__option">
+              <p>Historial clínico</p>
+            </div>
+            <div class="progressbar__option">
+              <p>Historial clínico</p>
+            </div>
+            <div class="progressbar__option">
+              <p>Condición energía</p>
+            </div>
+          </div>
+
+          <div class="form-principalDT">
+            <form id="form1" action="#">
+              <!-- PAGINA NO 1 DATOS GENERALES -->
+              <div class="pagina movPag">
+                <div class="gridpagina">
+                  <div class="titulo bloc3">
+                    <i class="fa fa-user-circle"></i> Datos Generales
+                  </div>
+
+                  <!-- Nombres -->
+                  <div class="campo">
+                    <div class="label">
+                      Nombres <b class="error" id="txtnombresCliente-error"></b>
+                    </div>
+
+                    <span id="icoError" class="input-icon"
+                      ><i class="fa fa-text-height" aria-hidden="true"></i
+                    ></span>
+                    <input
+                      type="text"
+                      id="txtnombresCliente"
+                      name="txtnombresCliente"
+                      placeholder="Nombres"
+                    />
+                  </div>
+
+                  <!-- Apellidos -->
+                  <div class="campo">
+                    <div class="label">
+                      Apellidos
+                      <b class="error" id="txtxapellidosCliente-error"></b>
+                    </div>
+                    <span id="icoError" class="input-icon"
+                      ><i class="fa fa-text-height" aria-hidden="true"></i
+                    ></span>
+                    <input
+                      type="text"
+                      name="txtxapellidoCliente"
+                      id="txtxapellidoCliente"
+                      placeholder="Apellidos"
+                    />
+                  </div>
+
+                  <!-- Correo Electrónico -->
+                  <div class="campo">
+                    <div class="label">
+                      Correo Electrónico
+                      <b class="error" id="txtcorreoCliente-error"></b>
+                    </div>
+                    <span id="icoError" class="input-icon"
+                      ><i class="fa fa-envelope" aria-hidden="true"></i
+                    ></span>
+                    <input
+                      type="text"
+                      name="txtcorreoCliente"
+                      id="txtcorreoCliente"
+                      placeholder="Correo Electrónico"
+                    />
+                  </div>
+                  <!-- Fecha Nacimiento -->
+                  <div class="campo">
+                    <div class="label">
+                      Fecha Nacimiento
+                      <b class="error" id="txtfechaNacimiento-error"></b>
+                    </div>
+                    <span id="icoError" class="input-icon"
+                      ><i class="fa fa-calendar" aria-hidden="true"></i
+                    ></span>
+                    <input
+                      type="date"
+                      name="txtfechaNacimiento"
+                      id="txtfechaNacimiento"
+                      style="height: calc(100% + 4px)"
+                    />
+                  </div>
+
+                  <!-- NO DPI -->
+                  <div class="campo">
+                    <div class="label">
+                      CUI
+                      <b class="error" id="txtxcuic-error"></b>
+                    </div>
+                    <span id="icoError" class="input-icon"
+                      ><i class="fa fa-text-height" aria-hidden="true"></i
+                    ></span>
+                    <input
+                      type="text"
+                      name="txtxCUIC"
+                      id="txtxCUIC"
+                      placeholder="CUI"
+                    />
+                  </div>
+
+                  <!-- Sexo -->
+                  <div class="campo">
+                    <div class="label">
+                      Sexo<b class="error" id="sexo-error"></b>
+                    </div>
+                    <span id="icoError" class="input-icon"
+                      ><i class="fa fa-angle-double-down" aria-hidden="true"></i
+                    ></span>
+                    <select name="txtsexo" id="txtsexo">
+                      <option value="-1" disabled selected>Seleccionar</option>
+                      <option value="0">Masculino</option>
+                      <option value="1">Femenino</option>
+                      <option value="2">Otro</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="grid3">
+                  <!-- Teléfono -->
+                  <div class="campo">
+                    <div class="label">
+                      No. Teléfono
+                      <b class="error" id="txtTelefono-error"></b>
+                    </div>
+                    <span id="icoError" class="input-icon"
+                      ><i class="fa fa-text-height" aria-hidden="true"></i
+                    ></span>
+                    <input
+                      style="padding-left: 42px; height: calc(100% + 6px)"
+                      type="tel"
+                      name="txtTelefono"
+                      id="txtTelefono"
+                    />
+                    <input type="text" id="telC" name="telC" class="ocultar" />
+                  </div>
+                  <!-- Edad -->
+                  <div class="campo">
+                    <div class="label">
+                      Edad
+                      <b class="error" id="txtEdad-error"></b>
+                    </div>
+                    <span id="icoError" class="input-icon"
+                      ><i class="fa fa-text-height" aria-hidden="true"></i
+                    ></span>
+                    <input
+                      type="text"
+                      name="txtEdad"
+                      id="txtEdad"
+                      placeholder="Edad"
+                      readonly
+                    />
+                    
+                  </div>
+
+                  <!-- Estatura -->
+                  <div class="campo">
+                    <div class="label">
+                      Estatura
+                      <b class="error" id="txtEstatura-error"></b>
+                    </div>
+                    <span id="icoError" class="input-icon"
+                      ><i class="fa fa-calendar" aria-hidden="true"></i
+                    ></span>
+                    <input
+                      type="text"
+                      name="txtEstatura"
+                      id="txtEstatura"
+                      placeholder="Estatura"
+                    />
+                    <div class="medidaEstatura">
+                      <select name="estaturaSelect" id="estaturaSelect">
+                          <option value="kg">Kg</option>
+                          <option value="lb">lb</option>
+                      </select>
+                  </div>
+                  </div>
+                  <!-- </div>
+
+            <div class="grid3"> -->
+                  <div class="titulo bloc3">Datos Emergencia</div>
+
+                  <!-- Nombres -->
+                  <div class="campo">
+                    <div class="label">
+                      Nombres
+                      <b class="error" id="txtnombresEmergencia-error"></b>
+                    </div>
+                    <span id="icoError" class="input-icon"
+                      ><i class="fa fa-text-height" aria-hidden="true"></i
+                    ></span>
+                    <input
+                      type="text"
+                      name="txtnombresEmergencia"
+                      id="txtnombresEmergencia"
+                      placeholder="Nombres"
+                    />
+                  </div>
+
+                  <!-- Apellidos -->
+                  <div class="campo">
+                    <div class="label">
+                      Apellidos
+                      <b class="error" id="txtapellidosEmergencia-error"></b>
+                    </div>
+                    <span id="icoError" class="input-icon"
+                      ><i class="fa fa-text-height" aria-hidden="true"></i
+                    ></span>
+                    <input
+                      type="text"
+                      name="txtapellidosEmergencia"
+                      id="txtapellidosEmergencia"
+                      placeholder="Apellidos"
+                    />
+                  </div>
+
+                  <!-- Teléfono -->
+                  <div class="campo">
+                    <div class="label">
+                      No. Teléfono<b
+                        class="error"
+                        id="txttelefonoEmergencia-error"
+                      ></b>
+                    </div>
+                    <span id="icoError" class="input-icon"
+                      ><i class="fa fa-text-height" aria-hidden="true"></i
+                    ></span>
+                    <input
+                      style="padding-left: 42px; height: calc(100% + 6px)"
+                      type="text"
+                      name="txttelefonoEmergencia"
+                      id="txttelefonoEmergencia"
+                    />
+                    <input type="text" name="telE" id="telE" class="ocultar" />
+                  </div>
+                </div>
+                <div class="campo bloc3">
+                  <button
+                    class="sigPag"
+                    name="btn_cliente"
+                    id="btn_siguienteDT"
+                    value="Insertar_Cliente"
+                  >
+                    Siguiente
+                  </button>
+                </div>
+              </div>
+
+              <!-- PAGINA NO 2 HISTORIAL CLINICO 1   -->
+              <div class="pagina">
+                <div class="gridpagina">
+                  <div class="titulo bloc3">
+                    <i class="fa fa-user-circle"></i>Historial Clínico - Parte 1
+                  </div>
+
+                  <!-- Pregunta 1 -->
+                  <div class="campo-pregunta">
+                    <div class="label">
+                      1) Problemas de corazón, dolor recurrente en el pecho o
+                      brazo.
+                      <b class="error" id="correo-error"></b>
+                    </div>
+                    <input type="radio" name="radio1" id="si1" />
+                    <label class="lblPregunta" for="si1">Si</label>
+                    <input
+                      type="radio"
+                      name="radio1"
+                      id="no1"
+                      checked="checked"
+                    />
+                    <label class="lblPregunta" for="no1">No</label>
+                  </div>
+
+                  <!-- Pregunta 2 -->
+                  <div class="campo-pregunta">
+                    <div class="label">
+                      2)Le ha sido diagnosticado(a) hipertension o toma
+                      medicamento para ello.<b
+                        class="error"
+                        id="numCel-error"
+                      ></b>
+                    </div>
+                    <input type="radio" name="radio2" id="si2" />
+                    <label class="lblPregunta" for="si2">Si</label>
+                    <input
+                      type="radio"
+                      name="radio2"
+                      id="no2"
+                      checked="checked"
+                    />
+                    <label class="lblPregunta" for="no2">No</label>
+                  </div>
+
+                  <!-- Pregunta 3 -->
+                  <div class="campo-pregunta">
+                    <div class="label">
+                      3) Problemas respiratorios (asma, sintomas de asfixia o
+                      falta de aire)<b class="error" id="numCel-error"></b>
+                    </div>
+                    <input type="radio" name="radio3" id="si3" />
+                    <label class="lblPregunta" for="si3">Si</label>
+                    <input
+                      type="radio"
+                      name="radio3"
+                      id="no3"
+                      checked="checked"
+                    />
+                    <label class="lblPregunta" for="no3">No</label>
+                  </div>
+
+                  <!-- Pregunta 4 -->
+                  <div class="campo-pregunta">
+                    <div class="label">
+                      4) Diabetes o altos niveles de glucosa en la sangre.<b
+                        class="error"
+                        id="numCel-error"
+                      ></b>
+                    </div>
+                    <input type="radio" name="radio4" id="si4" />
+                    <label class="lblPregunta" for="si4">Si</label>
+                    <input
+                      type="radio"
+                      name="radio4"
+                      id="no4"
+                      checked="checked"
+                    />
+                    <label class="lblPregunta" for="no4">No</label>
+                  </div>
+
+                  <!-- Pregunta 5 -->
+                  <div class="campo-pregunta">
+                    <div class="label">
+                      5) Problemas Neurológicos, (mareos, migraña cafelas,
+                      dolores de cabeza frecuentes, etc).
+                      <b class="error" id="numCel-error"></b>
+                    </div>
+                    <input type="radio" name="radio5" id="si5" />
+                    <label class="lblPregunta" for="si5">Si</label>
+                    <input
+                      type="radio"
+                      name="radio5"
+                      id="no5"
+                      checked="checked"
+                    />
+                    <label class="lblPregunta" for="no5">No</label>
+                  </div>
+
+                  <!-- Pregunta 6 -->
+                  <div class="campo-pregunta">
+                    <div class="label">
+                      6) Problemas gastrointestinales o digestivos (gastritis,
+                      colitis, estreñimiento, etc).
+                      <b class="error" id="numCel-error"></b>
+                    </div>
+                    <input type="radio" name="radio6" id="si6" />
+                    <label class="lblPregunta" for="si6">Si</label>
+                    <input
+                      type="radio"
+                      name="radio6"
+                      id="no6"
+                      checked="checked"
+                    />
+                    <label class="lblPregunta" for="no6">No</label>
+                  </div>
+
+                  <!-- Pregunta 7 -->
+                  <div class="campo-pregunta">
+                    <div class="label">
+                      7) Problemas articulares, musculares o alguna limitación
+                      física <b class="error" id="numCel-error"></b>
+                    </div>
+                    <input type="radio" name="radio7" id="si7" />
+                    <label class="lblPregunta" for="si7">Si</label>
+                    <input
+                      type="radio"
+                      name="radio7"
+                      id="no7"
+                      checked="checked"
+                    />
+                    <label class="lblPregunta" for="no7">No</label>
+                  </div>
+
+                  <!-- Pregunta 8 -->
+                  <div class="campo-pregunta">
+                    <div class="label">
+                      8) Problemas relacionados al exceso de grasa corporal
+                      <b class="error" id="numCel-error"></b>
+                    </div>
+                    <input type="radio" name="radio8" id="si8" />
+                    <label class="lblPregunta" for="si8">Si</label>
+                    <input
+                      type="radio"
+                      name="radio8"
+                      id="no8"
+                      checked="checked"
+                    />
+                    <label class="lblPregunta" for="no8">No</label>
+                  </div>
+
+                  <!-- Pregunta 9 -->
+                  <div class="campo-pregunta">
+                    <div class="label">
+                      9) Alergias
+                      <b class="error" id="numCel-error"></b>
+                    </div>
+                    <input type="radio" name="radio9" id="si9" />
+                    <label class="lblPregunta" for="si9">Si</label>
+                    <input
+                      type="radio"
+                      name="radio9"
+                      id="no9"
+                      checked="checked"
+                    />
+                    <label class="lblPregunta" for="no9">No</label>
+                  </div>
+
+                  <!-- Pregunta 10 -->
+                  <div class="campo-pregunta">
+                    <div class="label">
+                      10) Algún tipo de cancer (no de piel)
+                      <b class="error" id="numCel-error"></b>
+                    </div>
+                    <input type="radio" name="radio10" id="si10" />
+                    <label class="lblPregunta" for="si10">Si</label>
+                    <input
+                      type="radio"
+                      name="radio10"
+                      id="no10"
+                      checked="checked"
+                    />
+                    <label class="lblPregunta" for="no10">No</label>
+                  </div>
+
+                  <div class="campo btns bloc3">
+                    <button class="volver-pag1 volver">Atras</button>
+                    <button class="adelante-pag3 adelante">Siguiente</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PAGINA NO 3 HISTORIAL CLINICO 2 -->
+              <div class="pagina pagHistorial">
+                <div class="gridpagina">
+                  <div class="titulo bloc3">
+                    <i class="fa fa-user-circle"></i> Historial Clínico - Parte
+                    2
+                  </div>
+                  <!-- Pregunta 11 -->
+                  <div class="campo-pregunta">
+                    <div class="label">
+                      11) ¿Fuma? <b class="error" id="numCel-error"></b>
+                    </div>
+                    <input type="radio" name="radio11" id="si11" />
+                    <label class="lblPregunta" for="si11">Si</label>
+                    <input
+                      type="radio"
+                      name="radio11"
+                      id="no11"
+                      checked="checked"
+                    />
+                    <label class="lblPregunta" for="no11">No</label>
+                  </div>
+
+                  <!-- Pregunta 12 -->
+                  <div class="campo-pregunta">
+                    <div class="label">
+                      12) ¿Consume alcohol frecuentemente?
+                      <b class="error" id="numCel-error"></b>
+                    </div>
+                    <input type="radio" name="radio12" id="si12" />
+                    <label class="lblPregunta" for="si12">Si</label>
+                    <input
+                      type="radio"
+                      name="radio12"
+                      id="no12"
+                      checked="checked"
+                    />
+                    <label class="lblPregunta" for="no12">No</label>
+                  </div>
+                  <!-- Pregunta 13 -->
+                  <div class="campo-pregunta">
+                    <div class="label">
+                      13) ¿Consume algun tipo de droga (aún con prescripción
+                      medica)?
+                      <b class="error" id="numCel-error"></b>
+                    </div>
+                    <input type="radio" name="radio13" id="si13" />
+                    <label class="lblPregunta" for="si13">Si</label>
+                    <input
+                      type="radio"
+                      name="radio13"
+                      id="no13"
+                      checked="checked"
+                    />
+                    <label class="lblPregunta" for="no13">No</label>
+                  </div>
+
+                  <!-- Pregunta 14 -->
+                  <div class="campo-pregunta">
+                    <div class="label">
+                      14) ¿Toma medicamentos?
+                      <b class="error" id="numCel-error"></b>
+                    </div>
+                    <input type="radio" name="radio14" id="si14" />
+                    <label class="lblPregunta" for="si14">Si</label>
+                    <input
+                      type="radio"
+                      name="radio14"
+                      id="no14"
+                      checked="checked"
+                    />
+                    <label class="lblPregunta" for="no14">No</label>
+                  </div>
+                  <!-- Pregunta 15 -->
+                  <div class="campo-pregunta">
+                    <div class="label">
+                      15) Cirugia reciente(últimos 12 meses).
+                      <b class="error" id="numCel-error"></b>
+                    </div>
+                    <input type="radio" name="radio15" id="si15" />
+                    <label class="lblPregunta" for="si15">Si</label>
+                    <input
+                      type="radio"
+                      name="radio15"
+                      id="no15"
+                      checked="checked"
+                    />
+                    <label class="lblPregunta" for="no15">No</label>
+                  </div>
+
+                  <!-- Pregunta 16 -->
+                  <div class="campo-pregunta">
+                    <div class="label">
+                      16) ¿Hernia u otra condición que se pueda agravar con el
+                      ejercicio?
+                      <b class="error" id="numCel-error"></b>
+                    </div>
+                    <input type="radio" name="radio16" id="si16" />
+                    <label class="lblPregunta" for="si16">Si</label>
+                    <input
+                      type="radio"
+                      name="radio16"
+                      id="no16"
+                      checked="checked"
+                    />
+                    <label class="lblPregunta" for="no16">No</label>
+                  </div>
+
+                  <!-- Pregunta 17 -->
+                  <div class="campo-pregunta">
+                    <div class="label">
+                      17) ¿Hace ejercicio regularmente? .
+                      <b class="error" id="numCel-error"></b>
+                    </div>
+                    <input type="radio" name="radio17" id="si17" />
+                    <label class="lblPregunta" for="si17">Si</label>
+                    <input
+                      type="radio"
+                      name="radio17"
+                      id="no17"
+                      checked="checked"
+                    />
+                    <label class="lblPregunta" for="no17">No</label>
+                  </div>
+
+                  <!-- Pregunta 18 -->
+                  <div class="campo-pregunta">
+                    <div class="label">
+                      18) ¿Toma vitaminas o algún suplemento alimenticio?
+                      <b class="error" id="numCel-error"></b>
+                    </div>
+                    <input type="radio" name="radio18" id="si18" />
+                    <label class="lblPregunta" for="si18">Si</label>
+                    <input
+                      type="radio"
+                      name="radio18"
+                      id="no18"
+                      checked="checked"
+                    />
+                    <label class="lblPregunta" for="no18">No</label>
+                  </div>
+
+                  <!-- Pregunta 19  -->
+                  <div class="campo-pregunta">
+                    <div class="label">
+                      19) ¿Duerme lo suficiente?
+                      <b class="error" id="numCel-error"></b>
+                    </div>
+                    <input type="radio" name="radio19" id="si2" />
+                    <label class="lblPregunta" for="si19">Si</label>
+                    <input
+                      type="radio"
+                      name="radio19"
+                      id="no19"
+                      checked="checked"
+                    />
+                    <label class="lblPregunta" for="no19">No</label>
+                  </div>
+
+                  <!-- Pregunta 20 -->
+                  <div class="campo-pregunta">
+                    <div class="label">
+                      20) ¿Recomendación medica contraindicada del ejercicio por
+                      alguna razon o diagnótico reciente?
+                      <b class="error" id="numCel-error"></b>
+                    </div>
+                    <input type="radio" name="radio20" id="si20" />
+                    <label class="lblPregunta" for="si20">Si</label>
+                    <input
+                      type="radio"
+                      name="radio20"
+                      id="no20"
+                      checked="checked"
+                    />
+                    <label class="lblPregunta" for="no20">No</label>
+                  </div>
+
+                  <br />
+
+                  <!-- Observaciones -->
+                  <div class="campo-pregunta bloc3">
+                    <div class="label">
+                      Observaciones<b class="error" id="numCel-error"></b>
+                    </div>
+                    <textarea id="observaciones" rows="3"></textarea>
+                  </div>
+
+                  <div class="campo btns bloc3">
+                    <button class="volver-pag2 volver">Atras</button>
+                    <button class="adelante-pag4 adelante">Siguiente</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PAGINA NO 4 CONDICIONES DE ENERGIA -->
+              <div class="pagina">
+                <div class="gridpagina">
+                  <div class="titulo bloc3">
+                    <i class="fa fa-user-circle"></i> Condiciones de energía
+                  </div>
+
+                  <!-- Pregunta 21 -->
+
+                  <div class="campo-pregunta ocultar">
+                    <div class="label">
+                      21) ¿Esta usted embarazada, lactando o considera la
+                      posibilidad de estarlo?
+                      <b class="error" id="numCel-error"></b>
+                    </div>
+                    <input type="radio" name="radio21" id="si21" />
+                    <label class="lblPregunta" for="si21">Si</label>
+                    <input
+                      type="radio"
+                      name="radio21"
+                      id="no21"
+                      checked="checked"
+                    />
+                    <label class="lblPregunta" for="no21">No</label>
+                  </div>
+
+                  <!-- Pregunta 22 -->
+                  <div class="campo-pregunta ocultar">
+                    <div class="label">
+                      22) ¿Toma o a tomado anticonceptivos?¿Por cuanto tiempo?
+                      <b class="error" id="numCel-error"></b>
+                    </div>
+                    <input type="radio" name="radio22" id="si22" />
+                    <label class="lblPregunta" for="si22">Si</label>
+                    <input
+                      type="radio"
+                      name="radio22"
+                      id="no22"
+                      checked="checked"
+                    />
+                    <label class="lblPregunta" for="no22">No</label>
+                  </div>
+
+                  <!-- Pregunta 23 -->
+                  <div class="campo-pregunta ocultar">
+                    <div class="label">
+                      23) ¿Presenta alguna molestia o dolor en la mamas?
+                      <b class="error" id="numCel-error"></b>
+                    </div>
+                    <input type="radio" name="radio23" id="si23" />
+                    <label class="lblPregunta" for="si23">Si</label>
+                    <input
+                      type="radio"
+                      name="radio23"
+                      id="no23"
+                      checked="checked"
+                    />
+                    <label class="lblPregunta" for="no23">No</label>
+                  </div>
+
+                  <div class="titulo bloc3">¿Cómo considera su nivel de?</div>
+                  <!-- NIVELES DE ENERGIA -->
+                  <div class="campo-estrella">
+                    <div class="label">
+                      1) ¿Cómo considera su salud?
+                      <b class="error" id="numCel-error"></b>
+                    </div>
+                    <div class="star-rating">
+                      <!-- <p>Puntuación</p> -->
+                      <button id="star" class="star-salud">&#9734;</button>
+                      <button id="star" class="star-salud">&#9734;</button>
+                      <button id="star" class="star-salud">&#9734;</button>
+                      <button id="star" class="star-salud">&#9734;</button>
+                      <button id="star" class="star-salud">&#9734;</button>
+                      <br />
+                      <input type="text" class="rating-salud" value="Elegir" />
+                    </div>
+                  </div>
+                  <!-- Condición fisica -->
+                  <div class="campo-estrella">
+                    <div class="label">
+                      2) ¿Cómo considera su condición física?
+                      <b class="error" id="numCel-error"></b>
+                    </div>
+                    <div class="star-rating">
+                      <!-- <p>Puntuación</p> -->
+                      <button id="star" class="star-fisico">&#9734;</button>
+                      <button id="star" class="star-fisico">&#9734;</button>
+                      <button id="star" class="star-fisico">&#9734;</button>
+                      <button id="star" class="star-fisico">&#9734;</button>
+                      <button id="star" class="star-fisico">&#9734;</button>
+                      <br />
+                      <input type="text" class="rating-fisico" value="Elegir" />
+                    </div>
+                  </div>
+
+                  <!-- Condición nutricional -->
+                  <div class="campo-estrella">
+                    <div class="label">
+                      3) ¿Cómo considera su condición nutricional?
+                      <b class="error" id="numCel-error"></b>
+                    </div>
+                    <div class="star-rating">
+                      <!-- <p>Puntuación</p> -->
+                      <button id="star" class="star-nutricion">&#9734;</button>
+                      <button id="star" class="star-nutricion">&#9734;</button>
+                      <button id="star" class="star-nutricion">&#9734;</button>
+                      <button id="star" class="star-nutricion">&#9734;</button>
+                      <button id="star" class="star-nutricion">&#9734;</button>
+                      <br />
+                      <input
+                        type="text"
+                        class="rating-nutricion"
+                        value="Elegir"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Condición Estres -->
+                  <div class="campo-estrella">
+                    <div class="label">
+                      4) ¿Cómo considera su condición de estrés?
+                      <b class="error" id="numCel-error"></b>
+                    </div>
+                    <div class="star-rating">
+                      <!-- <p>Puntuación</p> -->
+                      <button id="star" class="star-estres">&#9734;</button>
+                      <button id="star" class="star-estres">&#9734;</button>
+                      <button id="star" class="star-estres">&#9734;</button>
+                      <button id="star" class="star-estres">&#9734;</button>
+                      <button id="star" class="star-estres">&#9734;</button>
+                      <br />
+                      <input type="text" class="rating-estres" value="Elegir" />
+                    </div>
+                  </div>
+
+                  <div class="campo btns bloc3">
+                    <button class="volver-pag3 volver">Atras</button>
+                    <button
+                      type="submit"
+                      value="Insertar_todo"
+                      name="btn_todo"
+                      class="Fin adelante"
+                    >
+                      Finalizar
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- FIN FORM -->
+            </form>
+            <!-- </div> -->
+          </div>
+        </div>
+
+        <!-- imagen -->
+        <img class="image-container" src="img/final1.jpg" alt="" />
+      </div>
+    </dialog>
+
+    <!-- FORMULARIO CONTROL CLIENTE  -->
+    <dialog id="modal_control_cliente">
+      <div class="contenido1">
+        <div class="container-controlc">
+          <div class="info-containercc" id="InfoCont">
+            <!-- <div class="container-form"> -->
+            <div id="btn_cancelarCCliente" class="btn_cancelar">
+              <i class="fa-solid fa-circle-xmark ex"> </i>
+            </div>
+
+            <header>Control Cliente</header>
+            <br />
+            <div class="container_detalle">
+              <div class="detalle_cliente">
+                <div class="detalle-input">
+                  <label for="txt_id">Id: </label>
+                  <input
+                    type="text"
+                    name="txt_id"
+                    id="txt_id"
+                    value="120"
+                    readonly
+                  />
+                  <label for="txt_nombresssD">Nombre: </label>
+                  <input
+                    type="text"
+                    name="txt_nombreD"
+                    id="txt_nombreD"
+                    value="Luis Fernando Paxel Cojolón"
+                    readonly
+                  />
+                </div>
+
+                <div class="detalle-input">
+                  <label for="txt_correoD">Correo electrónico: </label>
+                  <input
+                    type="text"
+                    id="txt_correoD"
+                    value="luisc522@gmail.com"
+                    readonly
+                  />
+                </div>
+                <div class="detalle-input">
+                  <label for="txt_edadD">Edad: </label>
+                  <input
+                    type="text"
+                    name="txt_edadD"
+                    id="txt_edadD"
+                    value="22"
+                    readonly
+                  />
+                  <label for="txt_alturaD">Altura: </label>
+                  <input
+                    type="text"
+                    name="txt_edadD"
+                    id="txt_alturaD"
+                    value="1.50 cm"
+                    readonly
+                  />
+                </div>
+              </div>
+              <div class="imageD">
+                <img class="image-containerD" src="img/fitness.png" alt="" />
+              </div>
+            </div>
+
+            <div class="form-princi">
+              <form id="form1" action="#">
+                <!-- PAGINA NO 1 DATOS GENERALES -->
+                <div class="pagina movPagCC">
+                  <div class="gridpagina">
+                    <div class="titulo bloc3">
+                      <i class="fa-sharp fa-solid fa-calendar-days"></i>
+                      Control Peso
+                    </div>
+                    <!-- Peso -->
+                    <div class="campo-medida">
+                      <div class="label">
+                        Peso <b class="error" id="peso-error"></b>
+                      </div>
+                      <span id="icoErrorCC" class="input-icon"
+                        ><i class="fa fa-krw" aria-hidden="true"></i
+                      ></span>
+                      <input
+                        type="number"
+                        name="txtPeso"
+                        id="txtPeso"
+                        placeholder="Peso"
+                        pattern="^[0-9]+"
+                        min="1"
+                        step="0.01"
+                      />
+
+                      <div class="medida">
+                        <select name="Mpeso" id="txtmedida">
+                          <option value="kg">Kg</option>
+                          <option value="lb">lb</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- Grasa campo -->
+                    <div class="campo-medida">
+                      <div class="label">
+                        Grasa Corporal<b class="error" id="grasa-error"></b>
+                      </div>
+                      <div id="icoErrorCC" class="input-icon">
+                        <i class="fa fa-percent" aria-hidden="true"></i>
+                      </div>
+                      <input
+                        type="number"
+                        id="txtGrasa"
+                        name="txtGrasac"
+                        placeholder="Grasa corporal"
+                        pattern="^[0-9]+"
+                        min="1"
+                        step="0.01"
+                      />
+                      <div class="medida">
+                        <select id="txtmedida">
+                          <option value="0">%</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- Agua -->
+                    <div class="campo-medida">
+                      <div class="label">
+                        Porcentaje Agua <b class="error" id="agua-error"></b>
+                      </div>
+                      <div id="icoErrorCC" class="input-icon">
+                        <i class="fa fa-percent" aria-hidden="true"></i>
+                      </div>
+                      <input
+                        type="number"
+                        id="txt_aguaPorc"
+                        name="aguaP"
+                        placeholder="Porcentaje Agua"
+                        pattern="^[0-9]+"
+                        min="1"
+                        step="0.01"
+                      />
+                      <div class="medida">
+                        <select id="txtmedida">
+                          <option value="0">%</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- Masa Muscular-->
+                    <div class="campo-medida">
+                      <div class="label">
+                        Masa Muscular<b class="error" id="masa-error"></b>
+                      </div>
+
+                      <div id="icoErrorCC" class="input-icon">
+                        <i class="fa fa-percent" aria-hidden="true"></i>
+                      </div>
+                      <input
+                        type="number"
+                        id="txtMasaM"
+                        name="masaM"
+                        placeholder="Masa Muscular"
+                        pattern="^[0-9]+"
+                        min="1"
+                      />
+                      <div class="medida">
+                        <select id="txtmedida">
+                          <option value="0">%</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- Valor Físico-->
+                    <div class="campo-medida">
+                      <div class="label">
+                        Valor Físico <b class="error" id="fisicoV-error"></b>
+                      </div>
+                      <div id="icoErrorCC" class="input-icon">
+                        <i class="fa fa-percent" aria-hidden="true"></i>
+                      </div>
+                      <input
+                        type="number"
+                        id="txtFisicoV"
+                        name="valorF"
+                        placeholder="Valor Físico"
+                        pattern="^[0-9]+"
+                        min="1"
+                      />
+                      <div class="medida">
+                        <select id="txtmedida">
+                          <option value="0">%</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- Metabolismo Basal -->
+                    <div class="campo-medida">
+                      <div class="label">
+                        Metabolismo Basal<b
+                          class="error"
+                          id="metabolismoB-error"
+                        ></b>
+                      </div>
+                      <div id="icoErrorCC" class="input-icon">
+                        <i class="fa fa-percent" aria-hidden="true"></i>
+                      </div>
+                      <input
+                        type="text"
+                        name="metabolismoB"
+                        id="txtMetabolismoB"
+                        placeholder="Metabolismo Basal"
+                      />
+                      <div class="medida">
+                        <select id="txtmedida">
+                          <option value="0">%</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- Edad Metabolica-->
+                    <div class="campo-medida">
+                      <div class="label">
+                        Edad Metabolica <b class="error" id="edadMet-error"></b>
+                      </div>
+                      <div id="icoErrorCC" class="input-icon">
+                        <i class="fa fa-percent" aria-hidden="true"></i>
+                      </div>
+                      <input
+                        type="number"
+                        id="txtEdadMet"
+                        name="edadM"
+                        placeholder="Edad Metabolica"
+                        pattern="^[0-9]+"
+                        min="1"
+                      />
+                      <div class="medida">
+                        <select id="txtmedida"></select>
+                      </div>
+                    </div>
+
+                    <!-- Masa Ósea-->
+                    <div class="campo-medida">
+                      <div class="label">
+                        Masa Ósea<b class="error" id="masaOs-error"></b>
+                      </div>
+                      <div id="icoErrorCC" class="input-icon">
+                        <i class="fa fa-percent" aria-hidden="true"></i>
+                      </div>
+                      <input
+                        type="number"
+                        id="txtMasaOsea"
+                        name="masaO"
+                        placeholder="Masa Ósea"
+                        pattern="^[0-9]+"
+                        min="1"
+                      />
+                      <div class="medida">
+                        <select name="Mmasao" id="txtmedida">
+                          <option value="kg">kg</option>
+                          <option value="lb">lb</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- Grasa Visceral-->
+                    <div class="campo-medida">
+                      <div class="label">
+                        Grasa Visceral <b class="error" id="grasaVi-error"></b>
+                      </div>
+                      <div id="icoErrorCC" class="input-icon">
+                        <i class="fa fa-percent" aria-hidden="true"></i>
+                      </div>
+                      <input
+                        type="number"
+                        id="txtGrasaVi"
+                        name="grasaV"
+                        placeholder="Grasa Visceral"
+                        pattern="^[0-9]+"
+                        min="1"
+                      />
+                      <div class="medida">
+                        <select id="txtmedida">
+                          <option value="0">%</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="campo-medida bloc3">
+                    <button
+                      class="sigPagCC"
+                      name="btn_cliente"
+                      id="btn_siguiente"
+                      value="Insertar_Cliente"
+                      disabled
+                    >
+                      Siguiente
+                    </button>
+                  </div>
+                </div>
+
+                <!-- PAGINA NO 2 MEDIDAS CORPORALES -->
+                <div class="pagina">
+                  <div class="gridpagina">
+                    <div class="titulo bloc3">
+                      <i class="fa-sharp fa-solid fa-calendar-days"></i>
+                      Control Medidas Corporales
+                    </div>
+
+                    <!-- Pectoral -->
+                    <div class="campo-medida">
+                      <div class="label">
+                        Pectoral <b class="error" id="pectoral-error"></b>
+                      </div>
+                      <div id="icoErrorCC" class="input-icon">
+                        <i class="fa-solid fa-ruler"></i>
+                      </div>
+                      <input
+                        type="number"
+                        id="txtPectoral"
+                        name="txtPextoral"
+                        placeholder="Pectoral"
+                        pattern="^[0-9]+"
+                        min="1"
+                        step="0.01"
+                      />
+                      <div class="medida">
+                        <select name="pectoralM" id="txtmedida">
+                          <option value="cm">cm</option>
+                          <option value="mm">mm</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- Dorsal -->
+                    <div class="campo-medida">
+                      <div class="label">
+                        Dorsal <b class="error" id="dorsal-error"></b>
+                      </div>
+                      <div id="icoErrorCC" class="input-icon">
+                        <i class="fa-solid fa-ruler"></i>
+                      </div>
+                      <input
+                        type="number"
+                        id="txtDorsal"
+                        name="txtDorsal"
+                        placeholder="Dorsal"
+                        pattern="^[0-9]+"
+                        min="1"
+                        step="0.01"
+                      />
+                      <div class="medida">
+                        <select name="dorsalM" id="txtmedida">
+                          <option value="cm">cm</option>
+                          <option value="mm">mm</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- Biceps-->
+                    <div class="campo-medida">
+                      <div class="label">
+                        Biceps
+                        <b class="error" id="biceps-error"></b>
+                      </div>
+                      <div id="icoErrorCC" class="input-icon">
+                        <i class="fa-solid fa-ruler"></i>
+                      </div>
+                      <input
+                        type="number"
+                        id="txtBiceps"
+                        name="txtBiceps"
+                        placeholder="Biceps"
+                        pattern="^[0-9]+"
+                        min="1"
+                        step="0.01"
+                      />
+                      <div class="medida">
+                        <select name="bicepsM" id="txtmedida">
+                          <option value="cm">cm</option>
+                          <option value="mm">mm</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- Antebrazos-->
+                    <div class="campo-medida">
+                      <div class="label">
+                        Antebrazos
+                        <b class="error" id="antebrazos-error"></b>
+                      </div>
+                      <div id="icoErrorCC" class="input-icon">
+                        <i class="fa-solid fa-ruler"></i>
+                      </div>
+                      <input
+                        type="number"
+                        id="txtAntebrazos"
+                        name="txtAntebrazos"
+                        placeholder="Antebrazos"
+                        pattern="^[0-9]+"
+                        min="1"
+                        step="0.01"
+                      />
+                      <div class="medida">
+                        <select name="antebrazosM" id="txtmedida">
+                          <option value="cm">cm</option>
+                          <option value="mm">mm</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- Cintura -->
+                    <div class="campo-medida">
+                      <div class="label">
+                        Cintura <b class="error" id="cintura-error"></b>
+                      </div>
+                      <div id="icoErrorCC" class="input-icon">
+                        <i class="fa-solid fa-ruler"></i>
+                      </div>
+                      <input
+                        type="number"
+                        id="txtCintura"
+                        name="txrCintura"
+                        placeholder="Cintura"
+                        pattern="^[0-9]+"
+                        min="1"
+                        step="0.01"
+                      />
+                      <div class="medida">
+                        <select name="cinturaM" id="txtmedida">
+                          <option value="cm">cm</option>
+                          <option value="mm">mm</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- Cadera-->
+                    <div class="campo-medida">
+                      <div class="label">
+                        Cadera<b class="error" id="cadera-error"></b>
+                      </div>
+                      <div id="icoErrorCC" class="input-icon">
+                        <i class="fa-solid fa-ruler"></i>
+                      </div>
+                      <input
+                        type="number"
+                        id="txtCadera"
+                        name="txtCadera"
+                        placeholder="Cintura"
+                        pattern="^[0-9]+"
+                        min="1"
+                        step="0.01"
+                      />
+                      <div class="medida">
+                        <select name="caderaM" id="txtmedida">
+                          <option value="cm">cm</option>
+                          <option value="mm">mm</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- Muslo -->
+                    <div class="campo-medida">
+                      <div class="label">
+                        Muslo<b class="error" id="muslo-error"></b>
+                      </div>
+                      <div id="icoErrorCC" class="input-icon">
+                        <i class="fa-solid fa-ruler"></i>
+                      </div>
+                      <input
+                        type="number"
+                        id="txtMuslo"
+                        name="txtMuslo"
+                        placeholder="Muslo"
+                        pattern="^[0-9]+"
+                        min="1"
+                        step="0.01"
+                      />
+                      <div class="medida">
+                        <select name="musloM" id="txtmedida">
+                          <option value="cm">cm</option>
+                          <option value="mm">mm</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- Pantorrilla -->
+                    <div class="campo-medida">
+                      <div class="label">
+                        Pantorrilla <b class="error" id="pantorrilla-error"></b>
+                      </div>
+                      <div id="icoErrorCC" class="input-icon">
+                        <i class="fa-solid fa-ruler"></i>
+                      </div>
+                      <input
+                        type="number"
+                        id="txtPantorrila"
+                        name="txtPantorrila"
+                        placeholder="Pantorrilla"
+                        pattern="^[0-9]+"
+                        min="1"
+                        step="0.01"
+                      />
+                      <div class="medida">
+                        <select name="pantM" id="txtmedida">
+                          <option value="cm">cm</option>
+                          <option value="mm">mm</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="campo-medida btns bloc3">
+                      <button type="button" class="volver-pag1CC volver">
+                        Atras
+                      </button>
+                      <button type="button" class="finCC">Aceptar</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- FIN FORM -->
+              </form>
+              <!-- </div> -->
+            </div>
+          </div>
+
+          <img class="image-container" src="img/gym_dos.svg" alt="" />
+        </div>
+      </div>
+    </dialog>
+    <!--        FORMULARIO MODIFICAR CLIENTE-->
+    <dialog id="ModalModificarCliente">
+      <div class="containerModCliente">
+        <div class="info-containerModCliente" id="InfoCont">
+          <div id="btn_cancelarModCliente" class="btn_cancelarModCliente">
+            <i class="fa-solid fa-circle-xmark ex"> </i>
+          </div>
+          <header>Modificar Cliente</header>
+          <div class="form-principalMC">
+            <form id="operacionesCliente" action="#">
+              <div class="paginaMC movPag">
+                <div class="gridpaginaMC">
+                  <div class="titulo bloc3">
+                    <i class="fa fa-user-circle"></i> Datos Generales
+                  </div>
+                  <!-- Nombres -->
+                  <div class="campo">
+                    <div class="label">
+                      Nombres <b class="error" id="txtnombresM-error"></b>
+                    </div>
+                    <input
+                      type="text"
+                      id="txtidCliente"
+                      name="txtidCliente"
+                      class="hideg"
+                    />
+
+                    <span id="icoErrorMC" class="input-icon"
+                      ><i class="fa fa-text-height" aria-hidden="true"></i
+                    ></span>
+                    <input
+                      type="text"
+                      id="txtnombresClienteM"
+                      name="txtnombresClienteM"
+                      placeholder="Nombres"
+                    />
+                  </div>
+
+                  <!-- Apellidos -->
+                  <div class="campo">
+                    <div class="label">
+                      Apellidos
+                      <b class="error" id="txtxapellidosM-error"></b>
+                    </div>
+                    <span id="icoErrorMC" class="input-icon"
+                      ><i class="fa fa-text-height" aria-hidden="true"></i
+                    ></span>
+                    <input
+                      type="text"
+                      name="txtApellidosClienteM"
+                      id="txtxapellidosClienteM"
+                      placeholder="Apellidos"
+                    />
+                  </div>
+
+                  <!-- Correo Electrónico -->
+                  <div class="campo">
+                    <div class="label">
+                      Correo Electrónico
+                      <b class="error" id="txtcorreoM-error"></b>
+                    </div>
+                    <span id="icoErrorMC" class="input-icon"
+                      ><i class="fa fa-envelope" aria-hidden="true"></i
+                    ></span>
+                    <input
+                      type="text"
+                      name="txtcorreoClienteM"
+                      id="txtcorreoClienteM"
+                      placeholder="Correo Electrónico"
+                    />
+                  </div>
+                  <!-- Fecha Nacimiento -->
+                  <div class="campo">
+                    <div class="label">
+                      Fecha Nacimiento
+                      <b class="error" id="txtfechaNacimientoM-error"></b>
+                    </div>
+                    <span id="icoErrorMC" class="input-icon"
+                      ><i class="fa fa-calendar" aria-hidden="true"></i
+                    ></span>
+                    <input
+                      type="date"
+                      name="txtfechaNacimientoM"
+                      id="txtfechaNacimientoM"
+                      style="height: calc(100% + 4px)"
+                    />
+                  </div>
+
+                  <!-- NO DPI -->
+                  <div class="campo">
+                    <div class="label">
+                      CUI
+                      <b class="error" id="txtxcuicM-error"></b>
+                    </div>
+                    <span id="icoErrorMC" class="input-icon"
+                      ><i class="fa fa-text-height" aria-hidden="true"></i
+                    ></span>
+                    <input
+                      type="text"
+                      name="txtxCUICM"
+                      id="txtxCUICM"
+                      placeholder="CUI"
+                    />
+                  </div>
+
+                  <!-- Sexo -->
+                  <div class="campo">
+                    <div class="label">
+                      Sexo<b class="error" id="sexoM-error"></b>
+                    </div>
+                    <span id="icoErrorMC" class="input-icon"
+                      ><i class="fa fa-angle-double-down" aria-hidden="true"></i
+                    ></span>
+                    <select name="txtsexoM" id="txtsexoM">
+                      <option value="-1" disabled selected>Seleccionar</option>
+                      <option value="0">Femenino</option>
+                      <option value="1">Masculino</option>
+                      <option value="0">Otro</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="grid3">
+                  <!-- Teléfono -->
+                  <div class="campo">
+                    <div class="label">
+                      No. Teléfono
+                      <b class="error" id="txtTelefonoM-error"></b>
+                    </div>
+                    <span id="icoErrorMC" class="input-icon"
+                      ><i class="fa fa-text-height" aria-hidden="true"></i
+                    ></span>
+                    <input
+                      style="padding-left: 42px; height: calc(100% + 6px)"
+                      type="tel"
+                      name="txtTelefonoM"
+                      id="txtTelefonoM"
+                    />
+                    <input
+                      type="text"
+                      id="telC_mod"
+                      name="telC_mod"
+                      class="hide"
+                    />
+                  </div>
+                  <!-- Edad -->
+                  <div class="campo">
+                    <div class="label">
+                      Edad
+                      <b class="error" id="txtEdadM-error"></b>
+                    </div>
+                    <span id="icoErrorMC" class="input-icon"
+                      ><i class="fa fa-text-height" aria-hidden="true"></i
+                    ></span>
+                    <input
+                      type="text"
+                      name="txtEdadM"
+                      id="txtEdadM"
+                      placeholder="Edad"
+                      readonly
+                    />
+                  </div>
+
+                  <!-- Estatura -->
+                  <div class="campo">
+                    <div class="label">
+                      Estatura
+                      <b class="error" id="txtEstaturaM-error"></b>
+                    </div>
+                    <span id="icoErrorMC" class="input-icon"
+                      ><i class="fa fa-calendar" aria-hidden="true"></i
+                    ></span>
+                    <input
+                      type="number"
+                      name="txtEstaturaM"
+                      id="txtEstaturaM"
+                      placeholder="Estatura"
+                      pattern="^[0-9]+"
+                      min="1"
+                      step="0.01"
+                    />
+                    <div class="iconEstaturaM">
+                      <label for="cm">cm</label>
+                    </div>
+                  </div>
+                  <!-- </div>
+            
+                  <div class="grid3"> -->
+                  <div class="titulo bloc3">Datos Emergencia</div>
+
+                  <!-- Nombres -->
+                  <div class="campo">
+                    <div class="label">
+                      Nombres
+                      <b class="error" id="txtnombresEM-error"></b>
+                    </div>
+                    <span id="icoErrorMC" class="input-icon"
+                      ><i class="fa fa-text-height" aria-hidden="true"></i
+                    ></span>
+                    <input
+                      type="text"
+                      name="txtnombresEmergenciaM"
+                      id="txtnombresEmergenciaM"
+                      placeholder="Nombres"
+                    />
+                  </div>
+
+                  <!-- Apellidos -->
+                  <div class="campo">
+                    <div class="label">
+                      Apellidos
+                      <b class="error" id="txtapellidosEM-error"></b>
+                    </div>
+                    <span id="icoErrorMC" class="input-icon"
+                      ><i class="fa fa-text-height" aria-hidden="true"></i
+                    ></span>
+                    <input
+                      type="text"
+                      name="txtapellidosEmergenciaM"
+                      id="txtapellidosEmergenciaM"
+                      placeholder="Apellidos"
+                    />
+                  </div>
+
+                  <!-- Teléfono -->
+                  <div class="campo">
+                    <div class="label">
+                      No. Teléfono<b class="error" id="txttelefonoEM-error"></b>
+                    </div>
+                    <span id="icoErrorMC" class="input-icon"
+                      ><i class="fa fa-text-height" aria-hidden="true"></i
+                    ></span>
+                    <input
+                      style="padding-left: 42px; height: calc(100% + 6px)"
+                      type="tel"
+                      name="txttelefonoEM"
+                      id="txttelefonoEM"
+                    />
+                    <input
+                      type="text"
+                      name="telEm_mod"
+                      id="telEm_mod"
+                      class="hide"
+                    />
+                  </div>
+                </div>
+                <div class="campo bloc3">
+                  <button
+                    class="finModificar"
+                    name="btn_modificarCliente"
+                    id="btn_modificarCliente"
+                    value="modificar_cliente"
+                    type="submit"
+                  >
+                    Aceptar
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- TABLE CLIENTES  -->
+    <div class="table-cliente">
+      <table id="datatable">
+        <thead>
+          <tr>
+            <th></th>
+            <th>No</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>CUI</th>
+            <th>Correo Electronico</th>
+            <th>Teléfono</th>
+            <th>Genero</th>
+            <th>Edad</th>
+            <th>Entrenador</th>
+            <th>Fecha Inicio</th>
+          </tr>
+        </thead>
+        <div class="bod">
+          <tbody id="tabla_cliente">
+            <tr data-persona="001">
+              <td class="table-checkbox">
+                <input type="checkbox" name="" id="" />
+              </td>
+
+              <td>1</td>
+              <td>Lucia Nicte</td>
+              <td>Hernandez Sanchez</td>
+              <td>98721 31233 1722</td>
+              <td>nic@gmail.com</td>
+              <td>+587712782</td>
+              <td>Femenino</td>
+              <td>20</td>
+              <td>Patricio Perez</td>
+              <td>29/12/2012</td>
+            </tr>
+            <tr data-persona="002">
+              <td class="table-checkbox">
+                <input type="checkbox" name="" id="" />
+              </td>
+
+              <td>2</td>
+              <td>Luis Fernando</td>
+
+              <td>Paxel Cojolón</td>
+              <td>2321 32343 1232</td>
+              <td>luisc522gmail.com</td>
+              <td>+502123312</td>
+              <td>Masculino</td>
+              <td>20</td>
+              <td>Patricio Perez</td>
+              <td>29/12/2012</td>
+            </tr>
+            <tr data-persona="003">
+              <td class="table-checkbox">
+                <input type="checkbox" name="" id="" />
+              </td>
+
+              <td>3</td>
+              <td>Luis Fernando</td>
+
+              <td>Paxel Cojolón</td>
+              <td>2321 32343 1232</td>
+              <td>luisc522gmail.com</td>
+              <td>+502123312</td>
+              <td>Masculino</td>
+              <td>20</td>
+              <td>Patricio Perez</td>
+              <td>29/12/2012</td>
+            </tr>
+            <tr data-persona="004">
+              <td class="table-checkbox">
+                <input type="checkbox" name="" id="" />
+              </td>
+
+              <td>4</td>
+              <td>Luis Fernando</td>
+
+              <td>Paxel Cojolón</td>
+              <td>2321 32343 1232</td>
+              <td>luisc522gmail.com</td>
+              <td>+502123312</td>
+              <td>Masculino</td>
+              <td>20</td>
+              <td>Patricio Perez</td>
+              <td>29/12/2012</td>
+            </tr>
+
+            <tr>
+              <td class="table-checkbox">
+                <input type="checkbox" name="" id="" />
+              </td>
+
+              <td>5</td>
+              <td>Luis Fernando</td>
+
+              <td>Paxel Cojolón</td>
+              <td>2321 32343 1232</td>
+              <td>luisc522gmail.com</td>
+              <td>+502123312</td>
+              <td>Masculino</td>
+              <td>20</td>
+
+              <td>Patricio Perez</td>
+              <td>29/12/2012</td>
+            </tr>
+            <tr>
+              <td class="table-checkbox">
+                <input type="checkbox" name="" id="" />
+              </td>
+
+              <td>6</td>
+              <td>Luis Fernando</td>
+              <td>Paxel Cojolón</td>
+              <td>2321 32343 1232</td>
+              <td>luisc522gmail.com</td>
+              <td>+502123312</td>
+              <td>Masculino</td>
+
+              <td>20</td>
+              <td>Patricio Perez</td>
+              <td>29/12/2012</td>
+            </tr>
+
+            <tr>
+              <td class="table-checkbox">
+                <input type="checkbox" name="" id="" />
+              </td>
+
+              <td>7</td>
+              <td>Orlando Ignacion</td>
+              <td>Ajucj aporo</td>
+              <td>2321 32343 1232</td>
+              <td>ajoch.com</td>
+              <td>+5099182</td>
+              <td>Masculino</td>
+              <td>99</td>
+              <td>asdasd Perez</td>
+              <td>12/12/2012</td>
+            </tr>
+
+            <tr>
+              <td class="table-checkbox">
+                <input type="checkbox" name="" id="" />
+              </td>
+
+              <td>7</td>
+              <td>Orlando Ignacion</td>
+              <td>Ajucj aporo</td>
+              <td>2321 32343 1232</td>
+              <td>ajoch.com</td>
+              <td>+5099182</td>
+              <td>Masculino</td>
+              <td>99</td>
+              <td>asdasd Perez</td>
+              <td>12/12/2012</td>
+            </tr>
+            <tr>
+              <td class="table-checkbox">
+                <input type="checkbox" name="" id="" />
+              </td>
+
+              <td>7</td>
+              <td>Orlando Ignacion</td>
+              <td>Ajucj aporo</td>
+              <td>2321 32343 1232</td>
+              <td>ajoch.com</td>
+              <td>+5099182</td>
+              <td>Masculino</td>
+              <td>99</td>
+              <td>asdasd Perez</td>
+              <td>12/12/2012</td>
+            </tr>
+
+            <tr>
+              <td class="table-checkbox">
+                <input type="checkbox" name="" id="" />
+              </td>
+
+              <td>7</td>
+              <td>Orlando Ignacion</td>
+              <td>Ajucj aporo</td>
+              <td>2321 32343 1232</td>
+              <td>ajoch.com</td>
+              <td>+5099182</td>
+              <td>Masculino</td>
+              <td>99</td>
+              <td>asdasd Perez</td>
+              <td>12/12/2012</td>
+            </tr>
+            <tr>
+              <td class="table-checkbox">
+                <input type="checkbox" name="" id="" />
+              </td>
+
+              <td>7</td>
+              <td>Orlando Ignacion</td>
+              <td>Ajucj aporo</td>
+              <td>2321 32343 1232</td>
+              <td>ajoch.com</td>
+              <td>+5099182</td>
+              <td>Masculino</td>
+              <td>99</td>
+              <td>asdasd Perez</td>
+              <td>12/12/2012</td>
+            </tr>
+            <tr>
+              <td class="table-checkbox">
+                <input type="checkbox" name="" id="" />
+              </td>
+
+              <td>7</td>
+              <td>Orlando Ignacion</td>
+              <td>Ajucj aporo</td>
+              <td>2321 32343 1232</td>
+              <td>ajoch.com</td>
+              <td>+5099182</td>
+              <td>Masculino</td>
+              <td>99</td>
+              <td>asdasd Perez</td>
+              <td>12/12/2012</td>
+            </tr>
+            <tr>
+              <td class="table-checkbox">
+                <input type="checkbox" name="" id="" />
+              </td>
+
+              <td>7</td>
+              <td>Orlando Ignacion</td>
+              <td>Ajucj aporo</td>
+              <td>2321 32343 1232</td>
+              <td>ajoch.com</td>
+              <td>+5099182</td>
+              <td>Masculino</td>
+              <td>99</td>
+              <td>asdasd Perez</td>
+              <td>12/12/2012</td>
+            </tr>
+            <tr>
+              <td class="table-checkbox">
+                <input type="checkbox" name="" id="" />
+              </td>
+
+              <td>7</td>
+              <td>Orlando Ignacion</td>
+              <td>Ajucj aporo</td>
+              <td>2321 32343 1232</td>
+              <td>ajoch.com</td>
+              <td>+5099182</td>
+              <td>Masculino</td>
+              <td>99</td>
+              <td>asdasd Perez</td>
+              <td>12/12/2012</td>
+            </tr>
+            <tr>
+              <td class="table-checkbox">
+                <input type="checkbox" name="" id="" />
+              </td>
+
+              <td>7</td>
+              <td>Orlando Ignacion</td>
+              <td>Ajucj aporo</td>
+              <td>2321 32343 1232</td>
+              <td>ajoch.com</td>
+              <td>+5099182</td>
+              <td>Masculino</td>
+              <td>99</td>
+              <td>asdasd Perez</td>
+              <td>12/12/2012</td>
+            </tr>
+            <tr>
+              <td class="table-checkbox">
+                <input type="checkbox" name="" id="" />
+              </td>
+
+              <td>7</td>
+              <td>Orlando Ignacion</td>
+              <td>Ajucj aporo</td>
+              <td>2321 32343 1232</td>
+              <td>ajoch.com</td>
+              <td>+5099182</td>
+              <td>Masculino</td>
+              <td>99</td>
+              <td>asdasd Perez</td>
+              <td>12/12/2012</td>
+            </tr>
+            <tr>
+              <td class="table-checkbox">
+                <input type="checkbox" name="" id="" />
+              </td>
+
+              <td>7</td>
+              <td>Orlando Ignacion</td>
+              <td>Ajucj aporo</td>
+              <td>2321 32343 1232</td>
+              <td>ajoch.com</td>
+              <td>+5099182</td>
+              <td>Masculino</td>
+              <td>99</td>
+              <td>asdasd Perez</td>
+              <td>12/12/2012</td>
+            </tr>
+          </tbody>
+        </div>
+      </table>
+    </div>
+    <!-- CONTENEDOR VER FILAS -->
+    <dialog id="modalControlMedida">
+      <div class="containerControl">
+        <div class="containerCMedida">
+          <div class="form">
+            <form id="frmModif" method="post" action="usuarios">
+              <!-- Tabla CONTROL PESO -->
+              <div class="ContainerTablePeso">
+                <div class="headingf"><h2>Control Peso</h2></div>
+
+                <div class="TablaCpeso">
+                  <table id="tablePeso" class="tablePeso">
+                    <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>Peso</th>
+                        <th>Grasa corporal</th>
+                        <th>% agua</th>
+                        <th>M. muscular</th>
+                        <th>Valor fisico</th>
+                        <th>M. basal</th>
+                        <th>Edad metabolica</th>
+                        <th>Masa osea</th>
+                        <th>Grasa visceral</th>
+                        <th>Hora y fecha</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>2002-12-11 12:12:09</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>2002-12-11 12:12:09</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>2002-12-11 12:12:09</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>2002-12-11 12:12:09</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Tabla CONTROL PESO -->
+              <div class="ContainerTablePeso">
+                <div class="headingf"><h2>Medidas Corporales</h2></div>
+                <div class="TablaCpeso">
+                  <table id="tablePeso" class="tablePeso">
+                    <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>Pectoral</th>
+                        <th>Dorsal</th>
+                        <th>Biceps</th>
+                        <th>Antebrazos</th>
+                        <th>Cintura</th>
+                        <th>Cadera</th>
+                        <th>Muslo</th>
+                        <th>Pantorrilla</th>
+                        <th>Hora y fecha</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>2002-12-11 12:12:09</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>2002-12-11 12:12:09</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>2002-12-11 12:12:09</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>1.80</td>
+                        <td>2002-12-11 12:12:09</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="btns">
+                <div class="inputBox">
+                  <button
+                    type="button"
+                    id="btnCancelarMedida"
+                    name="accion"
+                    value="Cancelar Medida"
+                  >
+                    Cancelar
+                  </button>
+                </div>
+
+                <div class="inputBox">
+                  <button
+                    type="button"
+                    id="btnEliminarU"
+                    name="accion"
+                    value="EliminarUsuario"
+                  >
+                    Vaciar Medidas
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <script src="js/main_table.js"></script>
+    <!-- BOTONES PRINCIPALES DE LA TABLA -->
+    <script>
+      const dt = new DataTable("#datatable", [
+        {
+          id: "button-agregar-cliente",
+          text: "Agregar Cliente",
+          icon: "fa-solid fa-user-plus",
+          action: function () {
+            const elementos = dt.getSelected();
+            const modalDatosGenerales = document.querySelector(
+              "#modal_datos_generales"
+            );
+            modalDatosGenerales.showModal();
+          },
+        },
+
+        {
+          id: "button-agregar-reporte",
+          text: "Agregar Reporte",
+          icon: "fa-solid fa-folder-plus",
+          action: function () {
+            const modal_detalle = document.querySelector(
+              "#modal_control_cliente"
+            );
+
+            modal_detalle.showModal();
+          },
+        },
+
+        {
+          id: "button-actualizar-cliente",
+          text: "Actualizar Cliente",
+          icon: "fa-solid fa-pen-to-square",
+          action: function () {
+            const modal_ModCliente = document.querySelector(
+              "#ModalModificarCliente"
+            );
+
+            modal_ModCliente.showModal();
+          },
+        },
+
+        {
+          id: "button-eliminar-cliente",
+          text: "Eliminar Cliente",
+          icon: "fa-solid fa-user-xmark",
+          action: function () {},
+        },
+
+        {
+          id: "button-ver-reporte",
+          text: "Ver Reporte",
+          icon: "fa-sharp fa-solid fa-folder-open",
+          action: function () {
+            window.open("reporte.html?id=2&id2=33", "_blank");
+          },
+        },
+        {
+          id: "error-row",
+          text: "Mas de dos datos seleccionados",
+          icon: "fa-solid fa-xmark",
+          action: function () {},
+        },
+      ]);
+
+      dt.parse();
+    </script>
+    <!-- <div class="container-prueba">
+      <div class="input-prueba">
+        <input type="text" id="idp" />
+      </div>
+
+      <div class="input-prueba">
+        <input type="text" id="nombrep" />
+      </div>
+      <div class="input-prueba">
+        <input type="text" id="apellidop" />
+      </div>
+      <div class="input-prueba">
+        <input type="text" id="cuip" />
+      </div>
+    </div>
+    <button id="btnprob">Aceptar</button> -->
+
+    <script src="js/momentLocale.min.js"></script>
+    <script src="js/DatosGenerales.js"></script>
+    <script src="js/ControlCliente.js"></script>
+    <script src="js/condicion.js"></script>
+    <script src="js/modificar_cliente.js"></script>
+  </body>
+</html>

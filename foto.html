@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/foto.css" />
+    <script src="library/fontawesome/js/all.min.js"></script>
+
+  </head>
+  <body>
+    <dialog id="modalCambiarPasswd">
+      <div class="container">
+        <div class="form">
+          <h2>Foto de perfil</h2>
+          <form>
+            <div class="imageContainer">
+              <input
+                class="inputFile"
+                type="file"
+                id="txtFoto"
+                onchange="previsualizar(event);"
+                accept=".png, .jpg"
+              />
+              <div class="ver-imagen">
+                <img id="txtImagenUsuario" />
+              </div>
+            </div>
+            <div class="btns">
+              <div class="inputBox">
+                <button type="button" id="btnCancelarimg">Cancelar</button>
+              </div>
+              <div class="inputBox">
+                <button type="submit" id="btnAceptarimg">Aceptar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </dialog>
+    <script src="js/foto.js"></script>
+  </body>
+</html>

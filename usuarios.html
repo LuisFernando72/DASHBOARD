@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Usuarios</title>
+    <script src="library/jQuery3.js"></script>
+    <link rel="stylesheet" href="library/jquery.dataTables.min.css" />
+    <script src="library/jquery.dataTables.min.js"></script>
+    <link href="css/estilo_usuario.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/estilo_tableUsuario.css" />
+    
+    <script src="library/sweetalert2.min.js"></script>
+    <script src="library/fontawesome/js/all.min.js"></script>
+  </head>
+  <body>
+    <div id="formContent" class="formContent">
+      <div class="headingTable">
+        <h2>Usuarios</h2>
+      </div>
+      <div class="ContainerDataTable">
+        <table id="tblCustomer" class="display tableCon" style="width: 100%">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Image</th>
+              <th>Id</th>
+              <th>Nombres</th>
+              <th>Apellidos</th>
+              <th>Cui</th>
+              <th>Correo Electronico</th>
+              <th>Rol</th>
+              <th>Fecha Creacion</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-id="001">
+              <td>1</td>
+              <td>
+                <div class="imageU">
+                  <img class="imgUser" src="img/lus.png" alt="" />
+                </div>
+              </td>
+
+              <td>005</td>
+              <td>Luis Fernando</td>
+              <td>Paxel Cojolon</td>
+              <td>7812994791872</td>
+              <td>luisc522txe@gmail.com</td>
+              <td>Entrenador</td>
+              <td>31/05/2002 12:45:00</td>
+            </tr>
+            <tr data-id="002">
+              <td>1</td>
+              <td>
+                <div class="imageU">
+                  <img class="imgUser" src="img/lus.png" alt="" />
+                </div>
+              </td>
+              <td>005</td>
+              <td>Luis Fernando</td>
+              <td>Paxel Cojolon</td>
+              <td>7812994791872</td>
+              <td>luisc522txe@gmail.com</td>
+              <td>Entrenador</td>
+              <td>31/05/2002 12:45:00</td>
+            </tr>
+            <tr data-id="003">
+              <td>1</td>
+              <td>
+                <div class="imageU">
+                  <img class="imgUser" src="img/lus.png" alt="" />
+                </div>
+              </td>
+              <td>005</td>
+              <td>Luis Fernando</td>
+              <td>Paxel Cojolon</td>
+              <td>7812994791872</td>
+              <td>luisc522txe@gmail.com</td>
+              <td>Entrenador</td>
+              <td>31/05/2002 12:45:00</td>
+            </tr>
+            <tr data-id="004">
+              <td>1</td>
+              <td>
+                <div class="imageU">
+                  <img class="imgUser" src="img/lus.png" alt="" />
+                </div>
+              </td>
+              <td>005</td>
+              <td>Luis Fernando</td>
+              <td>Paxel Cojolon</td>
+              <td>7812994791872</td>
+              <td>luisc522txe@gmail.com</td>
+              <td>Entrenador</td>
+              <td>31/05/2002 12:45:00</td>
+            </tr>
+            <tr data-id="005">
+              <td>1</td>
+              <td>
+                <div class="imageU">
+                  <img class="imgUser" src="img/lus.png" alt="" />
+                </div>
+              </td>
+              <td>005</td>
+              <td>Luis Fernando</td>
+              <td>Paxel Cojolon</td>
+              <td>7812994791872</td>
+              <td>luisc522txe@gmail.com</td>
+              <td>Entrenador</td>
+              <td>31/05/2002 12:45:00</td>
+            </tr>
+            <tr data-id="006">
+              <td>1</td>
+              <td>
+                <div class="imageU">
+                  <img class="imgUser" src="img/lus.png" alt="" />
+                </div>
+              </td>
+              <td>005</td>
+              <td>Luis Fernando</td>
+              <td>Paxel Cojolon</td>
+              <td>7812994791872</td>
+              <td>luisc522txe@gmail.com</td>
+              <td>Entrenador</td>
+              <td>31/05/2002 12:45:00</td>
+            </tr>
+            <tr data-id="007">
+              <td>1</td>
+              <td>
+                <div class="imageU">
+                  <img class="imgUser" src="img/lus.png" alt="" />
+                </div>
+              </td>
+              <td>005</td>
+              <td>Luis Fernando</td>
+              <td>Paxel Cojolon</td>
+              <td>7812994791872</td>
+              <td>luisc522txe@gmail.com</td>
+              <td>Entrenador</td>
+              <td>31/05/2002 12:45:00</td>
+            </tr>
+            <tr data-id="008">
+              <td>1</td>
+              <td>
+                <div class="imageU">
+                  <img class="imgUser" src="img/lus.png" alt="" />
+                </div>
+              </td>
+              <td>005</td>
+              <td>Luis Fernando</td>
+              <td>Paxel Cojolon</td>
+              <td>7812994791872</td>
+              <td>luisc522txe@gmail.com</td>
+              <td>Entrenador</td>
+              <td>31/05/2002 12:45:00</td>
+            </tr>
+            <tr data-id="009">
+              <td>1</td>
+              <td>
+                <div class="imageU">
+                  <img class="imgUser" src="img/lus.png" alt="" />
+                </div>
+              </td>
+              <td>005</td>
+              <td>Luis Fernando</td>
+              <td>Paxel Cojolon</td>
+              <td>7812994791872</td>
+              <td>luisc522txe@gmail.com</td>
+              <td>Entrenador</td>
+              <td>31/05/2002 12:45:00</td>
+            </tr>
+            <tr data-id="0010">
+              <td>1</td>
+              <td>
+                <div class="imageU">
+                  <img class="imgUser" src="img/lus.png" alt="" />
+                </div>
+              </td>
+              <td>005</td>
+              <td>Luis Fernando</td>
+              <td>Paxel Cojolon</td>
+              <td>7812994791872</td>
+              <td>luisc522txe@gmail.com</td>
+              <td>Entrenador</td>
+              <td>31/05/2002 12:45:00</td>
+            </tr>
+            <tr data-id="0011">
+              <td>1</td>
+              <td>
+                <div class="imageU">
+                  <img class="imgUser" src="img/lus.png" alt="" />
+                </div>
+              </td>
+              <td>005</td>
+              <td>Luis Fernando</td>
+              <td>Paxel Cojolon</td>
+              <td>7812994791872</td>
+              <td>luisc522txe@gmail.com</td>
+              <td>Entrenador</td>
+              <td>31/05/2002 12:45:00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="administracionRedes">
+        <div class="headingTable">
+          <h2>Administración de redes</h2>
+        </div>
+        <form action="#">
+          <ul class="box-info">
+            <!-- FACEBOOK -->
+            <li>
+              <a
+                href="https://www.facebook.com/gimnasio.lafabrika"
+                id="Ifacebook"
+                target="_blank"
+              >
+                <i class="bx fab fa-facebook-square"></i>
+              </a>
+           
+              <span class="text">
+                <input type="text" id="txtFace" name="txtFace" />
+              </span>
+            </li>
+            <!-- INSTAGRAM -->
+            <li>
+              <a
+                href="https://www.facebook.com/gimnasio.lafabrika"
+                id="Ifacebook"
+                target="_blank"
+              >
+                <i class="bx fa-brands fa-square-instagram"></i>
+              </a>
+
+              <span class="text">
+                <input type="text" id="txtinsta" name="txtinsta" />
+              </span>
+            </li>
+
+            <!-- TWITTER -->
+            <li>
+              <a
+                href="https://www.facebook.com/gimnasio.lafabrika"
+                id="Ifacebook"
+                target="_blank"
+              >
+                <i class="bx fa-brands fa-square-twitter"></i>
+              </a>
+
+              <span class="text">
+                <input type="text" name="txtTw" id="txtTw" />
+              </span>
+            </li>
+          </ul>
+
+          <div class="btnAceptarR">
+            <button
+              type="button"
+              name="accion"
+              id="btnAceptarR"
+              value="ActualizarRedesS"
+            >
+              Actualizar
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="administracionRedes">
+        <div class="headingTable">
+          <h2>Frase inicio</h2>
+        </div>
+        <form action="#">
+          <ul class="box-info">
+            <!-- fRASE -->
+            <li>
+              <div class="AreaFrase">
+                <textarea name="txtFrase" id="txtFrase"></textarea>
+              </div>
+            </li>
+            <!-- AUTOR-->
+            <li>
+              <label for="">Autor</label>
+              <input type="text" id="txtAutor" name="txtAutor" />
+            </li>
+          </ul>
+
+          <div class="btnAceptarR">
+            <button
+              type="button"
+              name="accion"
+              id="btnActualizarFrase"
+              value="ActualizarFrase"
+            >
+              Actualizar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- FORMULARIO USUARIOS -->
+    <dialog id="modalUser">
+      <div class="container">
+        <div id="btn_cancelarUs" class="btn_cancelar">
+          <i class="fa-solid fa-circle-xmark ex" title="Salir"> </i>
+        </div>
+        <div class="form">
+          <div class="ImagenContainer">
+            <div class="ImgUserFrm">
+              <img class="imgA" src="img/lus.png" alt="" />
+            </div>
+          </div>
+          <h2>Usuarios</h2>
+
+          <form id="frmModif" method="post" action="usuarios">
+            <!-- CONTRASEÑA ACTUAL -->
+            <div class="gridPagina">
+              <input
+                type="text"
+                name="txt_idUser"
+                id="txt_idUser"
+                value=""
+                class="hide"
+              />
+              <!-- NOMBRES -->
+
+              <div class="inputBox">
+                <label for="">Nombres</label>
+                <input
+                  type="text"
+                  id="txtNombres"
+                  name="txtNombres"
+                  placeholder="Nombres"
+                />
+              </div>
+              <!-- APELLIDOS -->
+              <div class="inputBox">
+                <label for="">Apellidos</label>
+                <input
+                  type="text"
+                  id="txtApellidos"
+                  name="txtApellidos"
+                  placeholder="Apellidos"
+                />
+              </div>
+              <!--CUI -->
+              <div class="inputBox">
+                <label for="">Cui</label>
+                <input
+                  type="text"
+                  id="txtCui"
+                  name="txtCui"
+                  placeholder="Cui"
+                />
+              </div>
+              <!-- CORREO ELECTRONICO -->
+              <div class="inputBox">
+                <label for="">Correo Electronico</label>
+                <input
+                  type="text"
+                  id="txtCorreo"
+                  name="txtCorreo"
+                  placeholder="Correo Electronico"
+                />
+              </div>
+              <!-- ROL -->
+              <div class="inputBox">
+                <label for="">Rol</label>
+                <label for="">Fecha Inicio</label>
+                <select
+                  name="txtRol"
+                  id="txtRol"
+                  style="width: 95%; height: 100%"
+                >
+                  <option value="1">Entrenador</option>
+                  <option value="2">Usuario</option>
+                </select>
+              </div>
+
+              <!-- FECHA INICIO -->
+              <div class="inputBox">
+                <label for="">Fecha Inicio</label>
+                <input
+                  type="text"
+                  id="txtFechai"
+                  name="txtFechai"
+                  placeholder="Fecha Inicio"
+                />
+              </div>
+            </div>
+            <div class="btns">
+              <div class="inputBox">
+                <button
+                  type="button"
+                  id="btnAsignarPuesto"
+                  name="accion"
+                  value="AsignarPuesto"
+                >
+                  Asignar Puesto
+                </button>
+              </div>
+
+              <div class="inputBox">
+                <button
+                  type="button"
+                  id="btnEliminarU"
+                  name="accion"
+                  value="EliminarUsuario"
+                >
+                  Eliminar Usuario
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </dialog>
+    <script src="js/main_usuario.js"></script>
+
+  </body>
+</html>
+
+
+

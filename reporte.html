@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi reporte</title>
+    <link rel="stylesheet" href="css/estilo_reporte.css" />
+  </head>
+
+  <body>
+    <div class="btnAceptar">
+      <button
+        id="btn_aceptar"
+        name="btn_aceptar"
+        class="btnAc"
+        onclick="printHTML()"
+      >
+        Opciones
+      </button>
+    </div>
+    <div class="contenedorReporte">
+      <header class="clearfix">
+        <div id="logo" class="logo">
+          <img src="img/LogoGym.png" />
+          <div class="nombreEmpresa">
+            <span class="logo_name">LA FÁBRICA</span>
+            <p>&#9733;Gimnasio & Cross training&#9733;</p> 
+          </div>
+         
+        </div>
+
+        <div id="company" class="dtEmpresa">
+          <h2 class="name">Gimnasio La Fabrica</h2>
+          <div>1a Avenida Norte, Antigua Guatemala, Guatemala</div>
+          <div>(+502) 7832-9840</div>
+          <div>
+            <a href="mailto:gymlafabrika@gmail.com" target="_blank"
+              >La fabric@</a
+            >
+          </div>
+        </div>
+      </header>
+      <div>
+        <div id="details">
+          <div id="client">
+            <div id="project">
+              <!-- <div class="headingf"><h2>Datos Generales</h2></div> -->
+              <div id="txtNombres">
+                <span>Cliente:</span> <span>Luis fernano Paxel Cojolón</span>
+              </div>
+              <div>
+                <span>Correo Eletronico: </span>
+                <a href="mailto:john@example.com" target="_blank" id="txtCorreo"
+                  >luisc522txe@gmail.com</a
+                >
+              </div>
+              <div id="txtTelefono">
+                <span>No Teléfono: </span> (502) 5112-1954
+              </div>
+              <div id="txtEdad"><span>Edad: </span>19 años</div>
+              <div id="txtAltura"><span>Estatura: </span> 1.20 cm</div>
+
+              <div id="txtNombresEm">
+                <span><b> Caso de emeregencia:</b> </span>Josefina Martina
+                Gonzalez Cojolón
+              </div>
+              <div id="txtTelefonoEm">
+                <span>No Teléfono: </span>(502) 68178172
+              </div>
+            </div>
+          </div>
+          <div id="invoice">
+            <h1>Ficha técnica de clientes</h1>
+            <div class="date" id="txtFi">Fecha Inicio: 01/06/2014</div>
+            <div class="date" id="txtFechaHoy">Fecha: 30/06/2014</div>
+          </div>
+        </div>
+        <div class="ContainerHistorialClinico">
+          <div class="headingf"><h2>Historial Clinico</h2></div>
+          <div class="HistorialClinico">
+            <div class="cPregunta">
+              <span>
+                1) Problemas de corazón, dolor recurrente en el pecho o
+                brazo.</span
+              >
+              <span>si</span>
+            </div>
+            <div class="cPregunta">
+              <span>
+                2)Le ha sido diagnosticado(a) hipertension o toma medicamento
+                para ello.</span
+              >
+              <span>si</span>
+            </div>
+
+            <div class="cPregunta">
+              <span>
+                3) Problemas respiratorios (asma, sintomas de asfixia o falta de
+                aire)</span
+              >
+              <span>si</span>
+            </div>
+
+            <div class="cPregunta">
+              <span> 4) Diabetes o altos niveles de glucosa en la sangre.</span>
+              <span>si</span>
+            </div>
+
+            <div class="cPregunta">
+              <span>
+                5) Problemas Neurológicos, (mareos, migraña cafelas, dolores de
+                cabeza frecuentes, etc).</span
+              >
+              <span>si</span>
+            </div>
+            <div class="cPregunta">
+              <span
+                >6) Problemas gastrointestinales o digestivos (gastritis,
+                colitis, estreñimiento, etc).</span
+              >
+              <span>si</span>
+            </div>
+            <div class="cPregunta">
+              <span>
+                7) Problemas articulares, musculares o alguna limitación
+                física</span
+              >
+              <span>si</span>
+            </div>
+            <div class="cPregunta">
+              <span>
+                8) Problemas relacionados al exceso de grasa corporal</span
+              >
+              <span>si</span>
+            </div>
+            <div class="cPregunta">
+              <span> 9) Alergias</span>
+              <span>si</span>
+            </div>
+            <div class="cPregunta">
+              <span> 10) Algún tipo de cancer (no de piel)</span>
+              <span>si</span>
+            </div>
+            <div class="cPregunta">
+              <span> 11) ¿Fuma? </span>
+              <span>si</span>
+            </div>
+            <div class="cPregunta">
+              <span> 12) ¿Consume alcohol frecuentemente?</span>
+              <span>si</span>
+            </div>
+            <div class="cPregunta">
+              <span>
+                13) ¿Consume algun tipo de droga (aún con prescripción
+                medica)?</span
+              >
+              <span>si</span>
+            </div>
+            <div class="cPregunta">
+              <span> 14) ¿Toma medicamentos?</span>
+              <span>si</span>
+            </div>
+            <div class="cPregunta">
+              <span>15) Cirugia reciente(últimos 12 meses).</span>
+              <span>si</span>
+            </div>
+            <div class="cPregunta">
+              <span>
+                16) ¿Hernia u otra condición que se pueda agravar con el
+                ejercicio?</span
+              >
+              <span>si</span>
+            </div>
+            <div class="cPregunta">
+              <span> 17) ¿Hace ejercicio regularmente?</span>
+              <span>si</span>
+            </div>
+            <div class="cPregunta">
+              <span>18) ¿Toma vitaminas o algún suplemento alimenticio?</span>
+              <span>si</span>
+            </div>
+            <div class="cPregunta">
+              <span> 19) ¿Duerme lo suficiente?</span>
+              <span>si</span>
+            </div>
+            <div class="cPregunta">
+              <span
+                >20) ¿Recomendación medica contraindicada del ejercicio por
+                alguna razon o diagnótico reciente?</span
+              >
+              <span>si</span>
+            </div>
+            <div class="cPregunta">
+              <span>
+                21) ¿Esta usted embarazada, lactando o considera la posibilidad
+                de estarlo?</span
+              >
+              <span>si</span>
+            </div>
+            <div class="cPregunta">
+              <span>
+                22) ¿Toma o a tomado anticonceptivos?¿Por cuanto tiempo?</span
+              >
+              <span>si</span>
+            </div>
+            <div class="cPregunta">
+              <span> 23) ¿Presenta alguna molestia o dolor en la mamas?</span>
+              <span>si</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- OBSERVACIONES -->
+        <div class="cObservaciones">
+          <div class="headingf"><h2>Observaciones</h2></div>
+          <div class="cObs">
+            <span
+              >HomesGuatemala es una empresa dedicada a promover propiedades y
+              proyectos inmobiliarios, fundada en 2007. Ofrecemos una variedad
+              de proyectos, apartamentos</span
+            >
+          </div>
+        </div>
+
+        <!-- CONDICIONES DE ENERGIA -->
+        <div class="condiciones-energia">
+          <div class="headingf"><h2>¿Cómo considera su nivel de?</h2></div>
+          <div class="containerCodiciones">
+            <div class="cPregunta">
+              <span> 1) ¿Cómo considera su salud?</span>
+              <span>Excelente</span>
+            </div>
+
+            <div class="cPregunta">
+              <span> 2) ¿Cómo considera su condición física?</span>
+              <span>Excelente</span>
+            </div>
+
+            <div class="cPregunta">
+              <span>3) ¿Cómo considera su condición nutricional?</span>
+              <span>Excelente</span>
+            </div>
+            <div class="cPregunta">
+              <span>4) ¿Cómo considera su condición de estrés?</span>
+              <span>Excelente</span>
+            </div>
+          </div>
+        </div>
+        <!-- Tabla CONTROL PESO -->
+        <div class="ContainerTablePeso">
+          <div class="headingf"><h2>Control Peso</h2></div>
+          <div class="TablaCpeso">
+            <table id="tablePeso" class="tablePeso">
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Peso</th>
+                  <th>Grasa corporal</th>
+                  <th>% agua</th>
+                  <th>M. muscular</th>
+                  <th>Valor fisico</th>
+                  <th>M. basal</th>
+                  <th>Edad metabolica</th>
+                  <th>Masa osea</th>
+                  <th>Grasa visceral</th>
+                  <th>Hora y fecha</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>2002-12-11 12:12:09</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>2002-12-11 12:12:09</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>2002-12-11 12:12:09</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>2002-12-11 12:12:09</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Tabla CONTROL PESO -->
+        <div class="ContainerTablePeso">
+          <div class="headingf"><h2>Medidas Corporales</h2></div>
+          <div class="TablaCpeso">
+            <table id="tablePeso" class="tablePeso">
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Pectoral</th>
+                  <th>Dorsal</th>
+                  <th>Biceps</th>
+                  <th>Antebrazos</th>
+                  <th>Cintura</th>
+                  <th>Cadera</th>
+                  <th>Muslo</th>
+                  <th>Pantorrilla</th>
+                  <th>Hora y fecha</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>2002-12-11 12:12:09</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>2002-12-11 12:12:09</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>2002-12-11 12:12:09</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>2002-12-11 12:12:09</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <h5>Gimnasio la fábrica, una familia.</h5>
+      </div>
+    </div>
+    <script src="js/main_reporte.js"></script>
+  </body>
+</html>
