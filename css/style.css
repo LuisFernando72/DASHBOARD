@@ -519,13 +519,6 @@ iframe {
     overflow-y: scroll;
   }
 
-  /* nav .logo-name {
-    pointer-events: none;
-    justify-content: center;
-    align-items: center;
-    background-color: rebeccapurple;
-  } */
-
   .nombreEmpresa {
     opacity: 0;
     display: none !important;
@@ -548,15 +541,12 @@ iframe {
 
 @media (max-width: 500px) {
   nav {
-    width: 60px;
+    width: 50px;
   }
   nav.close {
-    width: 60px;
+    width: 50px;
   }
-  .top .search-box .bienvenid h4 {
-    font-size: 8px;
-  }
-
+  
   nav.close ~ .mode .mode-toggle {
     right: 0;
     left: 0;
@@ -584,23 +574,31 @@ iframe {
   }
 
   nav ~ .dashboard {
-    left: 60px;
-    width: calc(100% - 60px);
+    left: 50px;
+    width: calc(100% - 50px);
   }
   nav.close ~ .dashboard {
-    left: 60px;
-    width: calc(100% - 60px);
+    left: 50px;
+    width: calc(100% - 50px);
   }
 
   nav ~ .dashboard .top {
-    left: 60px;
-    width: calc(100% - 60px);
+    left: 50px;
+    width: calc(100% - 50px);
     justify-content: right;
   }
+  .top .search-box .bienvenid h4 {
+    font-size: 8px;
+  }
+  .top .search-box .bienvenid{
+    width: calc(100% + 60px);
+    margin-left: -40px !important;
+  }
+
 
   nav.close ~ .dashboard .top {
-    left: 60px;
-    width: calc(100% - 60px);
+    left: 50px;
+    width: calc(100% - 50px);
   }
 
   .dashboard .top .sidebar-toggle {
@@ -618,8 +616,9 @@ iframe {
     pointer-events: none;
     justify-content: center;
   }
-  .top .search-box .bienvenid {
-  width: calc(100% + 20px);
+
+  .menu-items li a {
+    margin-left: 10px;
   }
 }
 @media screen and (min-height: 721px) {
@@ -627,6 +626,5 @@ iframe {
     height: 640px;
   }
 }
-
 
 /* PASAR ESTE CON EL NUEVO ESTILO */

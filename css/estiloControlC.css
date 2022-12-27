@@ -28,7 +28,6 @@
   max-height: 530px;
   background-color: transparent;
   border-radius: 18px;
-
 }
 
 .info-containercc {
@@ -358,13 +357,11 @@ button[disabled] {
 
 /* MEDIAQUERIES */
 
-
 /* IPAD TABLET */
 @media (min-width: 720px) and (max-width: 991px) {
   .container-controlc {
     margin: 35px 20px 20px 20px;
     padding: 0;
-  
   }
   .container-controlc .image-container {
     display: none;
@@ -372,16 +369,14 @@ button[disabled] {
   .info-containercc {
     width: 100%;
   }
-
 }
 
 @media (max-width: 710px) {
   .container-controlc {
     margin: 0;
     padding: 0;
-   
   }
-  .imageD img{
+  .imageD img {
     display: none;
   }
   .info-containercc {

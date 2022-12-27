@@ -6,7 +6,6 @@
 
 :root {
   --text-colordt: #000000;
-
   --icon-colordt: #515151;
   --secondary-colordt: #e1e0e0;
   --primary-colordt: #00bfff;
@@ -106,7 +105,7 @@ form input:focus-visible {
 }
 
 /* ESTATURA SELECT */
-.medidaEstatura select{
+.medidaEstatura select {
   width: 35px !important;
   padding: 1 !important;
   font-size: 8px;
@@ -555,7 +554,6 @@ input[type="time"] {
 
 /* IPAD TABLET */
 @media (min-width: 720px) and (max-width: 991px) {
- 
   .info-container {
     width: 85%;
     /* height: 100%; */
@@ -596,7 +594,6 @@ input[type="time"] {
   .container {
     margin: 25px 5px 5px 5px;
     padding: 0;
-  
   }
   .info-container {
     width: 100%;
@@ -650,8 +647,6 @@ input[type="time"] {
   .form-principalDT form .pagina .grid3 .bloc3 {
     grid-column: 1 / 3;
   }
-
-
 }
 
 @media (max-width: 415px) {
