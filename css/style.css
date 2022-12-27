@@ -76,7 +76,6 @@ nav .logo-name .nombreEmpresa {
   line-height: 16px;
 }
 nav .logo-name p {
-  position: relative;
   color: black;
   font-size: 9px;
   font-weight: bold;
@@ -116,7 +115,7 @@ nav.close .nombreEmpresa {
   justify-content: center;
 }
 
-nav.close  .logo-name{
+nav.close .logo-name {
   margin: 0 !important;
   margin-left: 12px;
 }
@@ -381,7 +380,6 @@ body.dark .switch::before {
   left: 200px;
   background-color: var(--panel-color);
   width: calc(100% - 200px);
-  /* padding: 10px 14px; */
   padding: 0;
   /* margin-top: 20px; */
   transition: var(--tran-05);
@@ -441,7 +439,7 @@ nav.close ~ .dashboard .top {
   border-radius: 5px;
   height: 95%;
   width: 100%;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 400;
   outline: none;
   text-align: center;
@@ -462,7 +460,6 @@ iframe {
   height: calc(100vh - 40px);
   width: 100%;
   background-color: var(--panel-color);
-  /* background-color: white; */
   margin: 0;
   padding: 0;
   margin-top: 40px;
@@ -521,6 +518,20 @@ iframe {
   .activity .activity-data {
     overflow-y: scroll;
   }
+
+  /* nav .logo-name {
+    pointer-events: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rebeccapurple;
+  } */
+
+  .nombreEmpresa {
+    opacity: 0;
+    display: none !important;
+    pointer-events: none;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 780px) {
@@ -542,6 +553,10 @@ iframe {
   nav.close {
     width: 60px;
   }
+  .top .search-box .bienvenid h4 {
+    font-size: 8px;
+  }
+
   nav.close ~ .mode .mode-toggle {
     right: 0;
     left: 0;
@@ -565,7 +580,6 @@ iframe {
 
   nav.close li a .link-name {
     opacity: 0;
-
     pointer-events: none;
   }
 
@@ -592,4 +606,27 @@ iframe {
   .dashboard .top .sidebar-toggle {
     display: none;
   }
+  nav p {
+    opacity: 0;
+    display: none !important;
+    justify-content: center;
+  }
+
+  .nombreEmpresa {
+    opacity: 0;
+    display: none !important;
+    pointer-events: none;
+    justify-content: center;
+  }
+  .top .search-box .bienvenid {
+  width: calc(100% + 20px);
+  }
 }
+@media screen and (min-height: 721px) {
+  .home__container {
+    height: 640px;
+  }
+}
+
+
+/* PASAR ESTE CON EL NUEVO ESTILO */

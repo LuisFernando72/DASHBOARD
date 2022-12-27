@@ -26,7 +26,6 @@ body {
   font-family: Arial, sans-serif;
   font-size: 12px;
   font-family: Arial;
-  z-index: 9999999999;
 }
 /* width */
 ::-webkit-scrollbar {
@@ -50,20 +49,16 @@ body {
 
 .contenedorReporte {
   position: relative;
-  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   background-color: white;
   flex-direction: column;
   border-radius: 6px;
+  overflow: auto;
 }
 
 @media print {
-  /* @page {
-      margin: 0;
-      size: auto;
-    } */
   .btnAc {
     display: none !important;
   }
@@ -73,19 +68,24 @@ body {
   }
 }
 
-.contenedorReporte header {
-  position: relative;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
 .contenedorReporte .logo {
   display: flex;
   flex-direction: row;
   justify-content: left;
   align-items: center;
-  margin: var(--margin);
+}
+
+#logo img {
+  height: 90px;
+  margin-left: -20px;
+}
+
+.contenedorReporte .dtEmpresa {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  text-align: right;
+  width: 100%;
 }
 
 .nombreEmpresa {
@@ -94,6 +94,7 @@ body {
   margin-top: 6px;
   margin-left: -12px;
 }
+
 .nombreEmpresa span {
   font-size: 14px;
   letter-spacing: 3.6px;
@@ -102,26 +103,19 @@ body {
   font-weight: bold;
   font-size: 8px;
 }
-#logo img {
-  height: 90px;
-}
-
-.contenedorReporte .dtEmpresa {
-  text-align: right;
-  padding: 10px;
-}
 
 #details {
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin: var(--margin);
+  margin-top: 12px;
 }
 
 #client {
   padding-left: 10px;
+  border: 1px solid var(--primary-color);
   border-left: 6px solid var(--primary-color);
-  background-color: var(--secondary-color);
   border-radius: 5px;
   padding: 5px;
 }
@@ -139,8 +133,6 @@ h2.name {
 #invoice {
   padding: 10px;
   text-align: right;
-  /* 
-    background-image: linear-gradient(-50deg, #25d1a0 0%, #d8ad02 40%); */
 }
 
 #invoice h1 {
@@ -306,19 +298,36 @@ h2.name {
   color: #fff;
   text-decoration: none;
 }
+.footer {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 .footer h5 {
   font-style: italic;
   font-size: 14px;
+  text-align: center;
 }
 
-@media (max-width: 710px) {
+@media (max-width: 500px) {
   body {
     width: 100%;
+    font-size: 11px;
   }
-  .cPregunta {
-    font-size: 12px;
+  .contenedorReporte {
+    width: 100%;
   }
-  .contenedorReporte table th {
-    font-size: 6px;
+
+  .contenedorReporte .dtEmpresa {
+    font-size: 10px;
+  }
+  span{
+    font-size: 11px;
+  }
+  .ContainerTablePeso .tablePeso td{
+    font-size: 10px;
   }
 }

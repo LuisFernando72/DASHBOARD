@@ -22,9 +22,6 @@
   --secondary-color: #38f9d7;
   --hover-colort: rgb(4, 116, 244);
 }
-/* #179CF0  twittwe */
-/* #C70066  insta */
-
 body {
   background-color: transparent;
 }
@@ -401,3 +398,15 @@ a {
   outline: 1px solid var(--hover-colort);
   box-shadow: 0 0 5px var(--hover-colort);
 }
+
+@media (max-width: 500px) {
+  .formContent h2{
+    font-size: 16px;
+  }
+  .dataTables_info{
+    font-size: 11px;
+  }
+}
+
+
+/* CAMBIOS AQUI */
