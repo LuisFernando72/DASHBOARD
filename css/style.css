@@ -86,8 +86,6 @@ nav .logo-image {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  /* min-width: 50px; */
 }
 nav .logo-image img {
   width: 60px;
@@ -101,10 +99,10 @@ nav .logo-name .logo_name {
   align-items: center;
   font-size: 20px;
   font-weight: 600;
-  /* margin-left: 14px; */
   color: black;
   transition: var(--tran-05);
   font-style: italic;
+  letter-spacing: 2px;
 }
 
 nav.close .nombreEmpresa {

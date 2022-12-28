@@ -6,7 +6,7 @@
 
 :root {
   --text-colort: #000000;
-  --primary-colort: #0ce6ed;
+  --primary-colort: #f5f7f5;
   --secondary-colort: #de84cb;
   --input-colort: #ffffff;
   --hover-colort: rgb(4, 116, 244);
@@ -64,7 +64,7 @@
 }
 
 #icon-search {
-  font-size: 22px;
+  font-size: 21px;
   padding: 5px 6px;
   border-radius: 5px;
   border-bottom-right-radius: 0;
@@ -182,7 +182,7 @@
 .datatable-container .footer-tools .pages ul li button,
 .datatable-container .footer-tools .pages ul li span,
 .datatable-container .header-tools .tools ul li button {
-  padding: 8px 8px;
+  padding: 5px 8px;
 }
 
 .datatable-container .datatable {
@@ -328,9 +328,22 @@ thead th:nth-child(9) {
   .material-icons {
     font-size: 11px;
   }
-
+  .datatable-container .datatable thead tr th,
   .datatable-container .datatable td {
     font-size: 10px;
   }
+  .datatable-container .header-tools{
+    padding: 0;
+    margin-bottom: 8px;
+  }
+  .datatable-container .footer-tools .pages ul li button{
+    font-size: 10px;
+  }
+
+  .datatable-container .header-tools .search .search-input {
+    border-radius: 4px;
+  }
+ 
 }
+
 /* CAMBIOS 1  */

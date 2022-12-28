@@ -406,6 +406,11 @@ a {
   .dataTables_info{
     font-size: 11px;
   }
+  .paginate_button,
+  #tblCustomer_previous,
+  #tblCustomer_next{
+    font-size: 8px;
+  }
 }
 
 

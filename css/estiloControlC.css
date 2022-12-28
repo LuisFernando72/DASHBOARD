@@ -445,4 +445,16 @@ button[disabled] {
   .info-containercc {
     border-radius: 0;
   }
+
+  .form-princi form .pagina .gridpagina {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  #Nom,
+  #txt_id,
+  #txtidC {
+    display: none;
+  }
+
 }

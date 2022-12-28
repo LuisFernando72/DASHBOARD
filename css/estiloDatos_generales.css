@@ -452,7 +452,7 @@ input[type="radio"]:checked + .lblPregunta::before {
 }
 
 #star {
-  margin-top: 5px;
+  margin-top: 12px;
   font-size: 30px;
   color: var(--star-colordt);
   background-color: unset;
@@ -672,7 +672,7 @@ input[type="time"] {
     height: 38px;
   }
   .form-principalDT form .pagina .campo-pregunta .label {
-    font-size: 12px;
+    font-size: 10px;
     top: -32px;
     line-height: 12px;
   }
@@ -712,5 +712,10 @@ input[type="time"] {
   .image-container,
   .info-container {
     border-radius: 0;
+  }
+  #star {
+  font-size: 15px;
+
+  padding: 0;
   }
 }
