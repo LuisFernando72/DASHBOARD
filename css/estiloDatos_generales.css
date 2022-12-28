@@ -53,7 +53,7 @@
   box-sizing: border-box;
 }
 
-#modal_uno {
+/* #modal_uno {
   background-color: transparent;
   border: none;
   padding: 0;
@@ -62,7 +62,7 @@
   max-height: 100%;
   margin: 0;
   border-radius: 15px;
-}
+} */
 
 .btn_cancelar {
   position: relative;
@@ -644,6 +644,7 @@ input[type="time"] {
     width: 100%;
     grid-template-columns: 1fr 1fr;
   }
+
   .form-principalDT form .pagina .grid3 .bloc3 {
     grid-column: 1 / 3;
   }

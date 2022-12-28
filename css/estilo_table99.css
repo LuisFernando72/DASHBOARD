@@ -195,3 +195,10 @@ body {
     margin: 10px;
   }
 }
+@media (max-width: 415px) {
+  .form .inputBox button{
+    font-size: 11px;
+    padding: 10px 5px;
+  }
+
+}
