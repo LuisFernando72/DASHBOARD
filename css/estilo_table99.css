@@ -196,9 +196,15 @@ body {
   }
 }
 @media (max-width: 415px) {
-  .form .inputBox button{
+  .form .inputBox button {
     font-size: 11px;
     padding: 10px 5px;
   }
 
+  .form-principalMC form .paginaMC .campo .input-icon {
+    display: none;
+  }
+  .form-principalMC form .paginaMC .campo input {
+    border-radius: 4px;
+  }
 }

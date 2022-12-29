@@ -135,6 +135,7 @@ form input:focus-visible {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
 .form-principalDT form .pagina .grid3 {
   width: 100%;
   display: grid;
@@ -463,12 +464,16 @@ input[type="radio"]:checked + .lblPregunta::before {
   cursor: pointer;
 }
 .form-principalDT form .pagina .campo-estrella input {
+  display: flex;
+  justify-content: left;
   font-weight: 600;
   border: none;
   height: 100%;
   font-style: italic;
   margin-top: -5px;
+  width: 100%;
   text-align: center;
+  /* text-align: center; */
   /* background: rebeccapurple; */
 }
 
@@ -624,6 +629,7 @@ input[type="time"] {
     font-size: 10px;
     line-height: 14px;
   }
+  
   .lblPregunta {
     margin-top: 22px;
     height: 15px;
@@ -651,15 +657,15 @@ input[type="time"] {
 }
 
 @media (max-width: 415px) {
-  .container {
+  /* .container {
     margin: 0;
     padding: 0;
-  }
-  .info-container {
+  } */
+  /* .info-container {
     width: 100%;
     height: 100%;
-    /* padding: 0 18px 0 18px; */
-  }
+    padding: 0 18px 0 18px;
+  } */
   .image-container {
     display: none;
   }
@@ -672,11 +678,13 @@ input[type="time"] {
     margin: 23px 0;
     height: 38px;
   }
+  
   .form-principalDT form .pagina .campo-pregunta .label {
     font-size: 10px;
     top: -32px;
     line-height: 12px;
   }
+  
   .info-container header {
     font-size: 12px;
   }
@@ -719,4 +727,14 @@ input[type="time"] {
 
   padding: 0;
   }
+  .form-principalDT form .pagina .campo .input-icon{
+    display: none;
+  }
+
+  .form-principalDT form .pagina .campo input{
+    border-radius: 4px;
+  }
+
+ 
 }
+
