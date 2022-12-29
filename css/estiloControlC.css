@@ -17,7 +17,6 @@
   width: 100% auto;
   justify-content: center;
   align-items: center;
-  /* box-sizing: border-box; */
   min-height: 530px;
   max-height: 530px;
 }
@@ -73,7 +72,6 @@
   background-color: var(--secondary-colorcc) !important;
   border-radius: 5px;
   justify-content: space-between;
-  /* margin-bottom: 10px; */
   border-radius: 10px;
 }
 .image-containerD {
@@ -154,7 +152,7 @@
   font-variant: small-caps;
   word-spacing: 2px;
   text-shadow: 5px 5px 9px var(--text-colorcc);
-  /* margin: 6px 10px; */
+
 }
 
 form input:focus-visible {
@@ -164,7 +162,6 @@ form input:focus-visible {
 .info-containercc .form-princi {
   min-height: auto;
   overflow: hidden;
-  /* overflow-y:auto; */
 }
 
 .form-princi form {
@@ -175,7 +172,7 @@ form input:focus-visible {
 .form-princi form .pagina {
   position: relative;
   width: 16.67%;
-  /* transition: margin-left 0.2s ease-in-out; */
+  transition: margin-left 0.2s ease-in-out;
 }
 .form-princi form .pagina .gridpagina {
   width: 100%;
@@ -406,9 +403,6 @@ button[disabled] {
     width: 100%;
     grid-template-columns: 1fr 1fr;
   }
-
- 
-
   .form-princi form .pagina .campo-medida .medida select {
     font-size: 13px;
   }
@@ -461,5 +455,4 @@ button[disabled] {
     font-size: 11px;
   }
 
- 
 }
